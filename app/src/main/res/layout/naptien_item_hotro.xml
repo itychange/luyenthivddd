@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="#fffffcec" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="#ffe3e1d6" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <com.lthdl.app.common.widget.button.CButton android:textSize="18.0sp" android:textColor="@color/white" android:background="@drawable/xml_button_border_red" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="(+49)6172 88 2312" android:drawablePadding="8.0dip" android:drawableStart="@drawable/icon_phone" android:paddingStart="24.0dip" android:paddingEnd="24.0dip" />
+    <LinearLayout android:orientation="horizontal" android:paddingTop="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/colorPrimary" android:gravity="center_horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Messenger" android:drawableTop="@drawable/icon_messenger" android:drawablePadding="4.0dip" android:layout_weight="1.0" />
+        <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/colorPrimary" android:gravity="center_horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Skype" android:drawableTop="@drawable/icon_skype" android:drawablePadding="4.0dip" android:layout_weight="1.0" />
+        <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/colorPrimary" android:gravity="center_horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Zalo" android:drawableTop="@drawable/icon_zalo" android:drawablePadding="4.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:height="150.0dip" android:width="150.0dip" android:drawable="@color/blueWhite" />
+    <item android:gravity="center" android:drawable="@drawable/icon_avatar" android:left="40.0dip" android:top="40.0dip" android:right="40.0dip" android:bottom="40.0dip" />
+</layer-list>

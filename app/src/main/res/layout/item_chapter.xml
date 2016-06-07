@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" android:layout_marginTop="4.5dip" android:layout_marginRight="9.0dip" android:layout_marginBottom="4.0dip">
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="19.0sp" android:textColor="@color/blue" android:id="@id/tvChapterName" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Phần 1: Phương pháp tích phân" style="@style/AppTheme.TextView.BookDetail" />
+        <LinearLayout android:orientation="vertical" android:id="@id/lyChapterVisiable" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout android:id="@id/lyChapterInVisiableBound" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ael_duration="300" app:ael_expanded="false" app:ael_orientation="vertical">
+            <LinearLayout android:orientation="vertical" android:id="@id/lyChapterInVisiable" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/lyExpand" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:background="@color/home.content.background" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <ImageView android:layout_gravity="center" android:id="@id/imvExpandChapter" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_margin="10.0dip" android:src="@drawable/icon_arrowdown" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

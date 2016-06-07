@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/lyParent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/lyContent" android:background="@drawable/xml_shadow_bg" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/AppTheme.PopupBottom">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip">
+            <ImageView android:id="@id/imvBookThumb" android:layout_width="90.0dip" android:layout_height="wrap_content" android:src="@drawable/image_book1" />
+            <LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TableRow android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="18.0sp" android:textColor="@color/blue" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/tvBookTitle" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Giải tích" style="@style/AppTheme.TextView.BookDetail" />
+                </TableRow>
+                <TableRow android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                    <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/greyLight" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/tvBookAuthor" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Trần Phương" style="@style/AppTheme.TextView.BookDetail" />
+                </TableRow>
+                <TableRow android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <RatingBar android:layout_gravity="center_vertical" android:id="@id/ratingBook" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="13.0dip" android:layout_marginTop="4.0dip" android:layout_marginBottom="8.0dip" android:numStars="5" android:rating="3.5" android:isIndicator="false" style="@style/AppTheme.RatingBar" />
+                        <TextView android:gravity="center_vertical" android:id="@id/tvBookRateCount" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="-5.0dip" android:text="(36)" android:layout_toRightOf="@id/ratingBook" />
+                    </RelativeLayout>
+                </TableRow>
+                <TableRow android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="18.0sp" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/tvBookStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Đã mua" style="@style/txtBougth" />
+                </TableRow>
+            </LinearLayout>
+        </LinearLayout>
+        <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/blue" android:id="@id/tvBookIntro" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="Bạn đã mua thành công, chúc bạn học tập tốt!" style="@style/AppTheme.TextView.BookDetail" />
+        <View android:background="@color/greyLight" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" />
+        <RelativeLayout android:id="@id/lyOK" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+            <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/blue" android:id="@id/tvOK" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OK" android:layout_centerInParent="true" style="@style/AppTheme.PopUpButton" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:id="@id/layoutTag" android:paddingBottom="@dimen/tag_margin" android:layout_width="wrap_content" android:layout_height="@dimen/tag_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.lthdl.app.common.widget.textview.CTextView android:textSize="16.0sp" android:textColor="#ffe6e6e6" android:gravity="center" android:id="@id/tvTagDummy" android:background="#ffe6e6e6" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="+ (for someone)" android:paddingStart="6.0dip" android:paddingEnd="6.0dip" />
+    <com.lthdl.app.common.widget.textview.CTextView android:textSize="16.0sp" android:textColor="@color/colorPrimary" android:gravity="center" android:id="@id/tvTag" android:background="@drawable/xml_button_border_textview_tag" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="+ (for someone)" android:paddingStart="6.0dip" android:paddingEnd="6.0dip" />
+</FrameLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/home.content.background" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+    <LinearLayout android:orientation="vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/imvSubChapter" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_margin="7.0dip" android:src="@drawable/icon_baikiemtra" android:layout_centerVertical="true" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:layout_toLeftOf="@id/imvContentSetting" android:layout_toRightOf="@id/imvSubChapter">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="18.0sp" android:id="@id/tvSubTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Đề thi olympic 2015" style="@style/AppTheme.TextView.BookDetail" />
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="16.0sp" android:id="@id/tvStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="New" style="@style/txtNew" />
+                </LinearLayout>
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="11.0sp" android:id="@id/tvDescritsion" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Câu hỏi thứ tự- Kiểm tra được đáp án" style="@style/AppTheme.TextView.BookDetail" />
+            </LinearLayout>
+            <ImageView android:id="@id/imvContentSetting" android:padding="10.0dip" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/icon_setting" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

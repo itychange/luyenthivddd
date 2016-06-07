@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="17.0sp" android:textColor="@color/blue" android:id="@id/tvOrderQuestion" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Sắp xếp theo thứ tự tăng dần các số sau đây: " />
+    <android.support.v7.widget.RecyclerView android:id="@id/rcvOrderAnswer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+</LinearLayout>

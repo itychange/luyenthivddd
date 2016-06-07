@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip" android:paddingStart="8.0dip" android:paddingEnd="8.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/container" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:foreground="?selectableItemBackground">
+        <ImageView android:id="@id/imvIconBook" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/icon_danhmuc" android:layout_centerVertical="true" android:layout_marginStart="8.0dip" />
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="15.0sp" android:gravity="center|left" android:layout_gravity="center|left|top" android:id="@android:id/text1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="Khoa học cơ bản" android:textAllCaps="true" android:layout_marginStart="8.0dip" android:layout_toEndOf="@id/imvIconBook" style="@style/AppTheme.TextView" />
+        <com.lthdl.app.common.widget.recyclerview.ExpandableItemIndicator android:layout_gravity="center|right" android:id="@id/indicator" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+        <LinearLayout android:background="@color/home.content.background" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</FrameLayout>

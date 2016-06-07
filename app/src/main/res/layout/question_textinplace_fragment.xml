@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/AppTheme.PaddingLayout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.lthdl.app.screen.questions.view.TextInPlaceLayout android:id="@id/lyTextInPlace" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:id="@id/lyNext" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/imvCheckAnswer" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/check" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

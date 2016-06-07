@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/layoutProfile" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginStart="32.0dip">
+        <de.hdodenhof.circleimageview.CircleImageView android:id="@id/imvProfile" android:layout_width="90.0dip" android:layout_height="90.0dip" android:src="@drawable/xml_avatar" app:civ_border_width="2.0dip" app:civ_border_color="@color/white" xmlns:app="http://schemas.android.com/apk/res-auto" />
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="13.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="Phan Thanh Đông" style="@style/AppTheme.TextView" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="55.0dip" android:layout_toEndOf="@id/layoutProfile">
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="16.0sp" android:textColor="@color/greyLight" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Số dư hiện tại" style="@style/AppTheme.TextView" />
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="28.0sp" android:textColor="@color/colorPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="500000.000 đ" style="@style/AppTheme.TextView" />
+    </LinearLayout>
+</RelativeLayout>

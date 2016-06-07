@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ScrollView android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:padding="@dimen/layout_padding_def" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.lthdl.app.common.widget.textview.RichTextView android:textSize="18.0sp" android:textColor="@color/colorPrimary" android:id="@id/tvQuestionContent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/question.long" />
+                <com.lthdl.app.common.widget.flowlayout.FlowLayout android:id="@id/flowAnswer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+                    <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/tvAnswer01" android:background="@drawable/xml_tag_border" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:text="slopes" />
+                    <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/tvAnswer02" android:background="@drawable/xml_tag_border" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:text="slopes" />
+                    <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/tvAnswer03" android:background="@drawable/xml_tag_border" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:text="putting" />
+                    <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/tvAnswer04" android:background="@drawable/xml_tag_border" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:text="as soon as" />
+                    <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/tvAnswer05" android:background="@drawable/xml_tag_border" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:text="cold" />
+                    <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/tvAnswer06" android:background="@drawable/xml_tag_border" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:text="overturned" />
+                    <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/tvAnswer07" android:background="@drawable/xml_tag_border" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:text="fertilizing" />
+                    <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/tvAnswer08" android:background="@drawable/xml_tag_border" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:text="wrapped" />
+                </com.lthdl.app.common.widget.flowlayout.FlowLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/tvAnswerAnim" android:background="@drawable/xml_tag_border" android:padding="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:text="slopes" />
+</FrameLayout>

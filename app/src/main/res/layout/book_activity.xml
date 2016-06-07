@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/greyWhite" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:id="@id/layoutTop" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" android:minHeight="?actionBarSize" app:layout_scrollFlags="enterAlways|scroll" app:layout_collapseMode="pin" style="@style/ToolBarStyle.Event">
+        <ImageView android:id="@id/btnBack" android:padding="4.0dip" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_action_icon_arrowleft" />
+        <com.lthdl.app.common.widget.textview.CTextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/actionbar_title" android:layout_weight="1.0" style="@style/AppTheme.TextView.Toolbar" />
+        <ImageView android:id="@id/btnSupport" android:padding="14.0dip" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/icon_smallsupport" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/content" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/layoutTop" />
+    <com.lthdl.app.common.widget.taskbar.SupportBar android:id="@id/supportBar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+</RelativeLayout>

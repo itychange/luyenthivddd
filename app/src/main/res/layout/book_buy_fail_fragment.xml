@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/lyParent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/lyContent" android:background="@drawable/xml_shadow_bg" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/AppTheme.PopupBottom">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:weightSum="2.0">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <de.hdodenhof.circleimageview.CircleImageView android:layout_gravity="center_horizontal" android:id="@id/profile_image" android:layout_width="100.0dip" android:layout_height="100.0dip" android:src="@drawable/xml_avatar" app:civ_border_width="2.0dip" app:civ_border_color="@color/white" xmlns:app="http://schemas.android.com/apk/res-auto" />
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="17.0sp" android:textColor="@color/greyDark" android:gravity="center_horizontal" android:id="@id/tvUserName" android:paddingTop="5.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Phan Dong" style="@style/AppTheme.TextView.BookDetail" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="18.0sp" android:textColor="@color/greyDark" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/tvBookTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Số dư hiện tại" style="@style/AppTheme.TextView.BookDetail" />
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="26.0sp" android:textColor="@color/orange" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/tvMoney" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10.000 đ" style="@style/AppTheme.TextView.BookDetail" />
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="15.0sp" android:textColor="@color/greyDark" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/tvPayment" android:padding="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:text="Nạp thêm" android:drawableLeft="@drawable/icon_add" android:drawablePadding="5.0dip" style="@style/txtBougth" />
+            </LinearLayout>
+        </LinearLayout>
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="15.0sp" android:textColor="@color/orange" android:id="@id/tvNotification" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="Số dư hiện tại không đủ thanh toán. Xin vui lòng nạp thêm tiền vào tài khoản ứng dụng." style="@style/AppTheme.TextView.BookDetail" />
+        <View android:background="@color/greyLight" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" />
+        <RelativeLayout android:id="@id/lyCancel" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+            <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/greyLight" android:id="@id/tvCancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HỦY" android:layout_centerInParent="true" style="@style/AppTheme.PopUpButton" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

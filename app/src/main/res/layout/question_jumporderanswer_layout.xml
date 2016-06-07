@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffe3e3e3" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:background="#ffffffff" android:paddingTop="8.0dip" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip">
+        <LinearLayout android:orientation="vertical" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.lthdl.app.common.widget.textview.CTextView android:textSize="18.0sp" android:textColor="#ff565f62" android:id="@id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hoàn thành cấu trúc" android:textAllCaps="true" />
+            <LinearLayout android:background="#ff808080" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="5.0dip" android:layout_marginBottom="20.0dip" />
+            <com.lthdl.app.common.widget.textview.RichTextView android:textSize="25.0sp" android:textColor="@color/colorPrimary" android:id="@id/tvContent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="100.0dip" android:text="Quá … để cho ai làm gì …" />
+            <ScrollView android:scrollbarSize="0.0dip" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="160.0dip" android:overScrollMode="never">
+                <com.lthdl.app.common.widget.flowlayout.MultiLineFlowLayout android:id="@id/flowAnswer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="160.0dip" app:itemHeight="@dimen/tag_height" app:minLines="3" app:itemMargin="@dimen/tag_margin" app:dividerColor="#ff454545" app:dividerHeight="1.0px">
+                    <com.lthdl.app.common.widget.textview.TextViewTag android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" app:text="S + " />
+                </com.lthdl.app.common.widget.flowlayout.MultiLineFlowLayout>
+            </ScrollView>
+            <com.lthdl.app.common.widget.flowlayout.FlowLayout android:id="@id/flowTag" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:gravity="start|top">
+                <com.lthdl.app.common.widget.textview.TextViewTag android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:layout_marginRight="6.0dip" app:text="+ adj/adv" app:show="true" />
+                <com.lthdl.app.common.widget.textview.TextViewTag android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:layout_marginRight="6.0dip" app:text="+ (for someone)" />
+                <com.lthdl.app.common.widget.textview.TextViewTag android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:layout_marginRight="6.0dip" app:text="+ too" />
+                <com.lthdl.app.common.widget.textview.TextViewTag android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:layout_marginRight="6.0dip" app:text="+ to do something" />
+            </com.lthdl.app.common.widget.flowlayout.FlowLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

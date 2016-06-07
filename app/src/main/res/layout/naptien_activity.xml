@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.design.widget.CoordinatorLayout android:fitsSystemWindows="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+        <android.support.design.widget.AppBarLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" android:minHeight="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" app:layout_scrollFlags="snap" app:layout_collapseMode="pin" style="@style/ToolBarStyle.Event">
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="20.0sp" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Nạp tiền vào tài khoản" style="@style/AppTheme.TextView.Toolbar" />
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+        <RelativeLayout android:background="#ffe3e3e3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="?actionBarSize">
+            <android.support.v7.widget.RecyclerView android:id="@id/rcvNapTien" android:paddingTop="8.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            <RelativeLayout android:id="@id/layoutSupport" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="vertical" android:id="@id/layoutSupportContent" android:background="#fffffcec" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip">
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="18.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="1. Chụp ảnh “Giấy chuyển tiền Liên có dấu ngân hàng” hoặc “Màn hình chuyển khoản thành công” nếu chuyển online từ tài khoản của bạn sang. Đính kèm và gửi cho chúng tôi thông qua một trong các kênh hỗ trợ ở mục 4 - Hỗ trợ, chúng tôi sẽ tiến hành nạp số tiền tương ứng vào tài khoản ứng dụng của bạn trong vòng 15 phút." />
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="18.0sp" android:paddingTop="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="2. Lưu ý: chỉ có hình thức này các bạn mới phải chờ đợi. Các hình thức còn lại ( hình thức 1 và 3) tiền sẽ được nạp tự động do đó tài khoản ứng dụng của bạn sẽ có tiền ngay sau khi bạn nạp thành công trong vòng 1, 2 giây" />
+                    <LinearLayout android:background="#ffdcdacf" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" />
+                    <com.lthdl.app.common.widget.button.CButton android:textSize="18.0sp" android:textColor="@color/colorPrimary" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/btnOk" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="OK" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/layoutBorderTop" android:background="@drawable/xml_scrimp_top" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_above="@id/layoutSupportContent" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

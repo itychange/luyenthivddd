@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/greyWhite" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" android:minHeight="?actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" app:layout_scrollFlags="enterAlways|scroll" app:layout_collapseMode="pin" style="@style/ToolBarStyle.Event">
+        <com.lthdl.app.common.widget.textview.CTextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Tổng kết kiểm tra" style="@style/AppTheme.TextView.Toolbar" />
+    </android.support.v7.widget.Toolbar>
+    <RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="7.0dip" android:layout_below="@id/toolbar">
+        <LinearLayout android:orientation="vertical" android:id="@id/lyHead" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.0">
+                <LinearLayout android:orientation="vertical" android:paddingLeft="10.0dip" android:paddingTop="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <LinearLayout android:orientation="horizontal" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TableRow android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <com.lthdl.app.common.widget.textview.CTextView android:textSize="17.0sp" android:textColor="@color/greyLabel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Đúng" />
+                        </TableRow>
+                        <TableRow android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <com.lthdl.app.common.widget.textview.CTextView android:textSize="19.0sp" android:textColor="@color/blue" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="15/30" />
+                        </TableRow>
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TableRow android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <com.lthdl.app.common.widget.textview.CTextView android:textSize="17.0sp" android:textColor="@color/greyLabel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Điểm" />
+                        </TableRow>
+                        <TableRow android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <com.lthdl.app.common.widget.textview.CTextView android:textSize="23.0sp" android:textColor="@color/blue" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="\ 65" />
+                        </TableRow>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <de.hdodenhof.circleimageview.CircleImageView android:layout_gravity="center_horizontal" android:id="@id/profile_image" android:layout_width="85.0dip" android:layout_height="85.0dip" android:src="@drawable/xml_avatar" app:civ_border_width="2.0dip" app:civ_border_color="@color/white" xmlns:app="http://schemas.android.com/apk/res-auto" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:paddingTop="20.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="17.0sp" android:textColor="@color/greyLabel" android:gravity="center" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Tổng điểm" />
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="34.0sp" android:textColor="@color/blue" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="\ 65" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="8.0">
+                <LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0">
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/bluedark" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="\ 65" />
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="15.0sp" android:textColor="@color/blackDetail" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="CẢ BÀI" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0">
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/blueGreen" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="\ 75" />
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="15.0sp" android:textColor="@color/blackDetail" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="LÀM LẠI" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0">
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/greenWhite" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="\ 85" />
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="15.0sp" android:textColor="@color/blackDetail" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="CÂU SAI" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0">
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/yellowWhite" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="\ 95" />
+                    <com.lthdl.app.common.widget.textview.CTextView android:textSize="15.0sp" android:textColor="@color/blackDetail" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="SAI CỦA SAI" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:background="@color/greyBgStatistic" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/lyBottom" android:layout_below="@id/lyHead">
+            <com.github.mikephil.charting.charts.BarChart android:id="@id/mChart" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="5.0dip" android:layout_above="@id/seekBar1" />
+        </LinearLayout>
+        <RelativeLayout android:id="@id/lyBottom" android:paddingLeft="40.0dip" android:paddingTop="10.0dip" android:paddingRight="40.0dip" android:paddingBottom="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <LinearLayout android:orientation="horizontal" android:id="@id/lyOption" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="-15.0dip" android:layout_marginRight="-15.0dip" android:layout_marginBottom="20.0dip" android:weightSum="3.0">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_gravity="center" android:padding="3.0dip" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/icon_thoat" />
+                    <com.lthdl.app.common.widget.textview.CTextView android:textColor="#ff777777" android:gravity="center" android:padding="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Thoát" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_gravity="center" android:padding="3.0dip" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/icon_smallmessenger" />
+                    <com.lthdl.app.common.widget.textview.CTextView android:gravity="center" android:padding="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Gửi tin" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_gravity="center" android:padding="3.0dip" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/icon_replay" />
+                    <com.lthdl.app.common.widget.textview.CTextView android:textColor="#ff777777" android:gravity="center" android:padding="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Xem lại" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:background="@drawable/xml_finish_txt_green" android:paddingLeft="15.0dip" android:paddingTop="10.0dip" android:paddingRight="15.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/lyOption" android:layout_centerHorizontal="true">
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="17.0sp" android:textColor="@color/white" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tiếp tục làm những câu sau" />
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="8.0dip" android:layout_height="wrap_content" android:src="@drawable/icon_arrow_right" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.lthdl.app.common.widget.taskbar.SupportBar android:id="@id/supportBar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</RelativeLayout>

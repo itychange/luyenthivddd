@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.Toolbar android:gravity="start" android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" android:minHeight="?actionBarSize" app:contentInsetStart="0.0dip" app:contentInsetLeft="0.0dip" app:popupTheme="@style/AppTheme.PopupOverlay" app:layout_scrollFlags="enterAlways|scroll" app:layout_collapseMode="pin" style="@style/ToolBarStyle.Event">
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="16.0sp" android:textStyle="bold" android:gravity="start|center" android:id="@id/tvTitle" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="bài test 1" android:drawablePadding="8.0dip" android:textAllCaps="true" android:drawableStart="@drawable/icon_back" android:layout_marginStart="0.0dip" style="@style/AppTheme.TextView.Toolbar" />
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/tvIndex" android:background="@drawable/icon_question_number" android:clickable="true" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_margin="4.0dip" android:text="1/40" android:foregroundGravity="center_horizontal" />
+        <ImageView android:layout_gravity="end" android:id="@id/imvSupport" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:src="@drawable/icon_smallsupport" android:layout_marginStart="8.0dip" />
+    </android.support.v7.widget.Toolbar>
+    <FrameLayout android:id="@id/container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/toolbar" />
+    <RelativeLayout android:id="@id/lyNext" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/imvNext" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/next" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.lthdl.app.common.widget.taskbar.SupportBar android:id="@id/supportBar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</RelativeLayout>

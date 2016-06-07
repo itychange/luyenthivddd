@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="9.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.percent.PercentRelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.lthdl.app.common.widget.textview.RichTextView android:textColor="@color/blue" android:id="@id/tvQuestion" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Select true answer" app:layout_widthPercent="100.0%" app:layout_heightPercent="39.999996%" />
+        <com.lthdl.app.screen.questions.view.TextSingleChoiceAnswerView android:id="@id/lyTextSingleChoiceAnswerView" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_below="@id/tvQuestion" app:layout_widthPercent="100.0%" app:layout_heightPercent="60.000004%" />
+    </android.support.percent.PercentRelativeLayout>
+</LinearLayout>

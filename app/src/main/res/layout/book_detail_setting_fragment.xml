@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/lyParent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/lyContent" android:background="@drawable/xml_shadow_yellow_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/AppTheme.PopupBottom">
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="19.0sp" android:gravity="center" android:id="@id/tvSubTitleSetting" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="Đề thi thử olympic 2015" style="@style/AppTheme.TextView.BookDetail" />
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="14.0sp" android:textColor="@color/blue" android:id="@id/tvIntroSetting" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="Để đạt hiệu quả bạn nên hoàn thành 100% thiết lập mặc định khi thay đổi" style="@style/AppTheme.TextView.BookDetail" />
+        <View android:background="@color/greyLight" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_margin="10.0dip" />
+        <RadioGroup android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+            <RelativeLayout android:orientation="horizontal" android:id="@id/lyThuTu" android:paddingTop="5.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="17.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Câu hỏi thứ tự" android:layout_centerVertical="true" style="@style/AppTheme.TextView.BookDetail" />
+                <RadioButton android:id="@id/radioThuTu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:button="@drawable/custom_radio_button" android:layout_alignParentRight="true" android:scaleX="0.7" android:scaleY="0.7" />
+            </RelativeLayout>
+            <RelativeLayout android:orientation="horizontal" android:id="@id/lyNgauNhien" android:paddingTop="5.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="17.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Câu hỏi ngẫu nhiên" android:layout_centerVertical="true" style="@style/AppTheme.TextView.BookDetail" />
+                <RadioButton android:id="@id/radioNgauNhien" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/custom_radio_button" android:layout_alignParentRight="true" android:scaleX="0.7" android:scaleY="0.7" />
+            </RelativeLayout>
+        </RadioGroup>
+        <View android:background="@color/greyLight" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_margin="10.0dip" />
+        <RadioGroup android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+            <RelativeLayout android:orientation="horizontal" android:id="@id/lyDapAnTruoc" android:paddingTop="5.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="17.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kiểm tra đáp án trước" android:layout_centerVertical="true" style="@style/AppTheme.TextView.BookDetail" />
+                <RadioButton android:id="@id/radioDapAnTruoc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:button="@drawable/custom_radio_button" android:layout_alignParentRight="true" android:scaleX="0.7" android:scaleY="0.7" />
+            </RelativeLayout>
+            <RelativeLayout android:orientation="horizontal" android:id="@id/lyDapAnSau" android:paddingTop="5.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.lthdl.app.common.widget.textview.CTextView android:textSize="17.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kiểm tra đáp án sau" android:layout_centerVertical="true" style="@style/AppTheme.TextView.BookDetail" />
+                <RadioButton android:id="@id/radioDapAnSau" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/custom_radio_button" android:layout_alignParentRight="true" android:scaleX="0.7" android:scaleY="0.7" />
+            </RelativeLayout>
+        </RadioGroup>
+        <View android:background="@color/greyLight" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginLeft="-15.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="-15.0dip" android:layout_marginBottom="5.0dip" />
+        <RelativeLayout android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+            <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/greyLabel" android:id="@id/tvCancelSetting" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="HỦY" android:layout_alignParentLeft="true" style="@style/AppTheme.PopUpButton" />
+            <com.lthdl.app.common.widget.textview.CTextView android:textColor="#ff7f7f7f" android:id="@id/tvBackToDefault" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="TRỞ VỀ MẶC ĐỊNH" android:layout_centerInParent="true" style="@style/AppTheme.PopUpButton" />
+            <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/blue" android:id="@id/tvSaveSetting" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="LƯU" android:layout_alignParentRight="true" style="@style/AppTheme.PopUpButton" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

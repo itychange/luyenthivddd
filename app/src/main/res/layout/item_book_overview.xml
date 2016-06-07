@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" android:layout_marginTop="9.0dip" android:layout_marginRight="9.0dip" android:layout_marginBottom="4.5dip">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/imvExpandBookDetail" android:layout_width="15.0dip" android:layout_height="15.0dip" android:src="@drawable/icon_arrowdown" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <com.lthdl.app.common.widget.textview.CTextView android:textSize="19.0sp" android:textColor="@color/blue" android:ellipsize="end" android:id="@id/tvOverView" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="25.0dip" android:text="Giới thiệu nội dung môn học asdfasdfasdfasdf" android:maxLines="1" android:lines="1" android:layout_toLeftOf="@id/imvExpandBookDetail" style="@style/AppTheme.TextView.BookDetail" />
+        </RelativeLayout>
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout android:id="@id/lyExpandBookDetail" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ael_duration="300" app:ael_expanded="false" app:ael_orientation="vertical">
+            <LinearLayout android:orientation="vertical" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-5.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/imvBookThumb" android:layout_width="90.0dip" android:layout_height="wrap_content" android:src="@drawable/image_book1" />
+                    <LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <TableRow android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                            <com.lthdl.app.common.widget.textview.CTextView android:textSize="18.0sp" android:textColor="@color/blue" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/tvBookTitle" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Giải tích" style="@style/AppTheme.TextView.BookDetail" />
+                        </TableRow>
+                        <TableRow android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                            <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/greyLight" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/tvBookAuthor" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Trần Phương" style="@style/AppTheme.TextView.BookDetail" />
+                        </TableRow>
+                        <TableRow android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                                <RatingBar android:layout_gravity="center_vertical" android:id="@id/ratingBook" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="13.0dip" android:layout_marginTop="4.0dip" android:layout_marginBottom="8.0dip" android:numStars="5" android:rating="3.5" android:isIndicator="false" style="@style/AppTheme.RatingBar" />
+                                <com.lthdl.app.common.widget.textview.CTextView android:gravity="center_vertical" android:id="@id/tvBookRateCount" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="-5.0dip" android:text="(36)" android:layout_toRightOf="@id/ratingBook" style="@style/AppTheme.TextView.BookDetail" />
+                            </RelativeLayout>
+                        </TableRow>
+                        <TableRow android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                            <com.lthdl.app.common.widget.textview.CTextView android:textSize="18.0sp" android:textColor="@color/greyLabel" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/tvBookStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Đã mua" style="@style/txtBougth" />
+                        </TableRow>
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:background="@color/greyLight" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+                <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/greyLabel" android:id="@id/tvBookIntro" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:text="I just use one image for all states (and it actually looks decent), but as you can see from the selector, there are four different states possible (@drawable/cookie is finally an actuall cookie png image). And the cool thing here is that RatingBar component will automatically fill in part of the cookie when needed based only on “full” and “empty” images (if you support half ratings, as in my example image)." style="@style/AppTheme.TextView.BookDetail" />
+            </LinearLayout>
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/yellow" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:paddingStart="8.0dip" android:paddingEnd="8.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/imvIcon" android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/icon_bigsupport" android:layout_centerVertical="true" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16.0dip" android:layout_toEndOf="@id/imvIcon">
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="17.0sp" android:id="@id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bạn cần hỗ trợ?" style="@style/AppTheme.TextView" />
+        <com.lthdl.app.common.widget.textview.CTextView android:textSize="13.0sp" android:textColor="@color/colorPrimary" android:id="@id/tvDescription" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="Giải đáp thắc mắc về giao dịch, dịch vụ" style="@style/AppTheme.TextView" />
+    </LinearLayout>
+    <ImageView android:id="@id/imvArrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_arrow_up" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+</RelativeLayout>

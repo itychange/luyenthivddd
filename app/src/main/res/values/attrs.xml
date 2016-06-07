@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- User defined -->
+    <declare-styleable name="MultiLineFlowLayout">
+        <attr name="itemHeight" format="dimension"/>
+        <attr name="minLines" format="integer"/>
+        <attr name="itemMargin" format="dimension"/>
+        <attr name="dividerColor" format="color"/>
+        <attr name="dividerHeight" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="RichTextView">
+    </declare-styleable>
+    <declare-styleable name="CEditText">
+    </declare-styleable>
+    <attr name="text" format="string"/>
+    <attr name="show" format="boolean"/>
+</resources>
