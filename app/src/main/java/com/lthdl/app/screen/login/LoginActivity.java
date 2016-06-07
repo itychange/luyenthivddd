@@ -19,6 +19,8 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.HttpMethod;
+import com.facebook.Profile;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -35,6 +37,8 @@ import org.greenrobot.eventbus.Subscribe;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -42,8 +46,11 @@ import java.util.List;
 
 import butterknife.Bind;
 
-public class LoginActivity extends BaseActivity {
+import static com.facebook.HttpMethod.*;
 
+public class LoginActivity extends BaseActivity {
+    URL img = null;
+    String profile_image;
     @Bind(R.id.btnLoginFb)
     Button btnLoginFb;
     private List<User> userList = new ArrayList<User>();
@@ -54,13 +61,14 @@ public class LoginActivity extends BaseActivity {
 
     protected void init() {
         this.login_button = ((LoginButton) findViewById(R.id.login_button));
+
         this.login_button.registerCallback(this.callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onCancel() {
                 Utils.showToast(LoginActivity.this.getApplicationContext(), "Cancel", false);
                 AccessToken localAccessToken = AccessToken.getCurrentAccessToken();
                 if (localAccessToken != null) {
-                    Log.e("TAG", "user Token:" + localAccessToken.getToken());
+//                    Log.e("TAG", "user Token:" + localAccessToken.getToken());
 
                 }
             }
@@ -73,34 +81,45 @@ public class LoginActivity extends BaseActivity {
             public void onSuccess(LoginResult paramLoginResult) {
                 Log.e("TAG", "user Token:" + paramLoginResult.getAccessToken().getToken());
                 if (Global.USER == null)
-                    Log.e("Check",Global.USER.toString());
+//                    Log.e("Check",Global.USER.toString());
                 Global.USER = new User();
-                Global.USER.fbToken = paramLoginResult.getAccessToken().getToken();
+                Global.USER.social_token = paramLoginResult.getAccessToken().getToken();
 
                 GraphRequest request = GraphRequest.newMeRequest(paramLoginResult.getAccessToken(),
-                        new GraphRequest.GraphJSONObjectCallback() {
+                      new GraphRequest.GraphJSONObjectCallback() {
                             @Override
                             public void onCompleted(JSONObject object, GraphResponse response) {
                                 final JSONObject jsonObject = response.getJSONObject();
-
+                                Log.e("Loca",jsonObject.toString());
 
                                 try {
 
                                     User user = new User();
-                                    user.setIdFace(jsonObject.getString("id"));
+                                    img = new URL("http://graph.facebook.com/"+user.getSocial_id()+"/picture?type=normal");
+
+                                    user.setSocial_id(jsonObject.getString("id"));
                                     user.setName(jsonObject.getString("name"));
-                                    user.setFbToken(Global.USER.fbToken);
+                                    user.setSocial_token(Global.USER.social_token);
                                     user.setEmail(jsonObject.getString("email"));
+                                    user.setThumbnail(img.toString());
+                                    user.setGender(jsonObject.getString("gender"));
+                                    user.setBirthday(jsonObject.getString("birthday"));
+
+
+
+
 
                                     userList.add(user);
 
                                 } catch(JSONException ex) {
                                     ex.printStackTrace();
+                                } catch (MalformedURLException e) {
+                                    e.printStackTrace();
                                 }
                             }
                         });
                 Bundle parameters = new Bundle();
-                parameters.putString("fields", "id, name, email,gender, birthday, location"); // Parámetros que pedimos a facebook
+                parameters.putString("fields", "id, name, email, gender, birthday ,location "); // Parámetros que pedimos a facebook
                 request.setParameters(parameters);
                 request.executeAsync();
 

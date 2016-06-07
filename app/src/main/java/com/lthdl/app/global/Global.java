@@ -16,7 +16,7 @@ public class Global {
         boolean sessionExpired = true;
         if (USER == null) {
             USER = new User();
-            USER.fbToken = "";
+            USER.social_token = "";
         }
         AccessToken localAccessToken = AccessToken.getCurrentAccessToken();
         if ((localAccessToken != null) /*|| (!TextUtils.isEmpty(localAccessToken.getToken()))*/) {
