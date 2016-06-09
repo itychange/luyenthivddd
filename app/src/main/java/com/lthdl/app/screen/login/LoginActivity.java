@@ -1,6 +1,7 @@
 package com.lthdl.app.screen.login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -19,8 +20,6 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.HttpMethod;
-import com.facebook.Profile;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -51,8 +50,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.facebook.HttpMethod.*;
-
 public class LoginActivity extends BaseActivity {
     URL img = null;
     String profile_image;
@@ -60,11 +57,17 @@ public class LoginActivity extends BaseActivity {
     Button btnLoginFb;
     private List<User> userList = new ArrayList<User>();
     private CallbackManager callbackManager;
-
+    SharedPreferences pre=null;
     @Bind(R.id.login_button)
     LoginButton login_button;
     User user=null;
     protected void init() {
+        SharedPreferences pre=this.getSharedPreferences ("login",MODE_PRIVATE);
+        boolean bchk=pre.getBoolean("check", false);
+        if(bchk==true){
+            EventBus.getDefault().post(new OnEventOpenHomeActivity());
+            finish();
+        }
         this.login_button = ((LoginButton) findViewById(R.id.login_button));
         this.login_button.registerCallback(this.callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -85,7 +88,6 @@ public class LoginActivity extends BaseActivity {
             public void onSuccess(LoginResult paramLoginResult) {
                 Log.e("TAG", "user Token:" + paramLoginResult.getAccessToken().getToken());
                 if (Global.USER == null)
-//                    Log.e("Check",Global.USER.toString());
                 Global.USER = new User();
                 Global.USER.social_token = paramLoginResult.getAccessToken().getToken();
 
@@ -95,21 +97,22 @@ public class LoginActivity extends BaseActivity {
                             public void onCompleted(JSONObject object, GraphResponse response) {
                                 final JSONObject jsonObject = response.getJSONObject();
                                 Log.e("Loca",jsonObject.toString());
-
                                 try {
-
                                   user= new User();
                                     img = new URL("http://graph.facebook.com/"+user.getSocial_id()+"/picture?type=normal");
-
                                     user.setSocial_id(jsonObject.getString("id"));
                                     user.setName(jsonObject.getString("name"));
                                     user.setSocial_token(Global.USER.social_token);
-                                    user.setEmail(jsonObject.getString("email"));
                                     user.setThumbnail(img.toString());
                                     user.setGender(jsonObject.getString("gender"));
-                                    user.setBirthday(jsonObject.getString("birthday"));
-                                    userList.add(user);
 
+                                    SharedPreferences pre=getSharedPreferences("login", MODE_PRIVATE);
+                                    SharedPreferences.Editor edit=pre.edit();
+                                    edit.putBoolean("check", true);
+                                    edit.commit();
+
+
+                                    Login(user);
 
                                 } catch(JSONException ex) {
                                     ex.printStackTrace();
@@ -122,10 +125,6 @@ public class LoginActivity extends BaseActivity {
                 parameters.putString("fields", "id, name, email, gender, birthday ,location "); // Parámetros que pedimos a facebook
                 request.setParameters(parameters);
                 request.executeAsync();
-
-
-
-//                Utils.showToast(LoginActivity.this.getApplicationContext(), "Successful", false);
                 EventBus.getDefault().post(new OnEventOpenHomeActivity());
             }
         });
@@ -135,21 +134,6 @@ public class LoginActivity extends BaseActivity {
             }
         });
 
-        ApiInterface apiService =
-                ApiClient.getClient().create(ApiInterface.class);
-
-        apiService.insertUser("kkk", "kk", "", "", "", new Callback<Response>() {
-            @Override
-            public void onResponse(Call<Response> call, Response<Response> response) {
-                Toast.makeText(LoginActivity.this, "ss", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onFailure(Call<Response> call, Throwable t) {
-                Toast.makeText(LoginActivity.this, "onFailure", Toast.LENGTH_LONG).show();
-
-            }
-        });
     }
 
 
@@ -198,5 +182,20 @@ public class LoginActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
         AppEventsLogger.activateApp(this);
+    }
+    private void Login(User user){
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        Call<User> call= apiService.login(user);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                Toast.makeText(LoginActivity.this, LoginActivity.this.getResources().getString(R.string.login_success), Toast.LENGTH_LONG).show();
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Toast.makeText(LoginActivity.this, "onFailure", Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 }

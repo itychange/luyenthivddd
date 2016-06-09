@@ -2,13 +2,11 @@ package com.lthdl.app;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-
-import butterknife.ButterKnife;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import butterknife.ButterKnife;
 import icepick.Icepick;
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -18,6 +16,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onContentChanged();
         ButterKnife.bind(this);
         init();
+
+
     }
 
     protected void onCreate(Bundle paramBundle) {

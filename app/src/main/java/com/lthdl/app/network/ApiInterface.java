@@ -5,6 +5,7 @@ import com.lthdl.app.model.User;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.POST;
 
@@ -13,8 +14,11 @@ import retrofit2.http.POST;
  */
 
 public interface  ApiInterface {
-    @POST("/users")
-    Call<User> login(User user);
+
+//    @POST("users")
+//    Call<User> login(User user);
+    @POST("users")
+    Call<User> login(@Body User user);
     public void insertUser(
             @Field("username") String email,
             @Field("social_id") String username,
