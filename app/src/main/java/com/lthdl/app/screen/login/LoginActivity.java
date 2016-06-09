@@ -29,6 +29,8 @@ import com.lthdl.app.R;
 import com.lthdl.app.common.Utils;
 import com.lthdl.app.global.Global;
 import com.lthdl.app.model.User;
+import com.lthdl.app.network.ApiClient;
+import com.lthdl.app.network.ApiInterface;
 import com.lthdl.app.screen.core.CoreActivity;
 import com.lthdl.app.screen.home.event.OnEventOpenHomeActivity;
 
@@ -45,6 +47,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static com.facebook.HttpMethod.*;
 
@@ -58,10 +63,9 @@ public class LoginActivity extends BaseActivity {
 
     @Bind(R.id.login_button)
     LoginButton login_button;
-
+    User user=null;
     protected void init() {
         this.login_button = ((LoginButton) findViewById(R.id.login_button));
-
         this.login_button.registerCallback(this.callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onCancel() {
@@ -94,7 +98,7 @@ public class LoginActivity extends BaseActivity {
 
                                 try {
 
-                                    User user = new User();
+                                  user= new User();
                                     img = new URL("http://graph.facebook.com/"+user.getSocial_id()+"/picture?type=normal");
 
                                     user.setSocial_id(jsonObject.getString("id"));
@@ -104,12 +108,8 @@ public class LoginActivity extends BaseActivity {
                                     user.setThumbnail(img.toString());
                                     user.setGender(jsonObject.getString("gender"));
                                     user.setBirthday(jsonObject.getString("birthday"));
-
-
-
-
-
                                     userList.add(user);
+
 
                                 } catch(JSONException ex) {
                                     ex.printStackTrace();
@@ -132,6 +132,22 @@ public class LoginActivity extends BaseActivity {
         this.btnLoginFb.setOnClickListener(new OnClickListener() {
             public void onClick(View paramView) {
                 LoginActivity.this.login_button.performClick();
+            }
+        });
+
+        ApiInterface apiService =
+                ApiClient.getClient().create(ApiInterface.class);
+
+        apiService.insertUser("kkk", "kk", "", "", "", new Callback<Response>() {
+            @Override
+            public void onResponse(Call<Response> call, Response<Response> response) {
+                Toast.makeText(LoginActivity.this, "ss", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<Response> call, Throwable t) {
+                Toast.makeText(LoginActivity.this, "onFailure", Toast.LENGTH_LONG).show();
+
             }
         });
     }
@@ -168,9 +184,8 @@ public class LoginActivity extends BaseActivity {
     public void onEvent(OnEventOpenHomeActivity paramOnEventOpenHomeActivity) {
 
         OnEventOpenHomeActivity onEventOpenHomeActivity = new OnEventOpenHomeActivity();
-        Toast.makeText(LoginActivity.this,onEventOpenHomeActivity.show(),Toast.LENGTH_LONG).show();
-        onEventOpenHomeActivity.show();
-        Toast.makeText(LoginActivity.this,"Login",Toast.LENGTH_LONG).show();
+
+//        Toast.makeText(LoginActivity.this,"Login",Toast.LENGTH_LONG).show();
         startActivity(new Intent(this, CoreActivity.class));
         finish();
     }

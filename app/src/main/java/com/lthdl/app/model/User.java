@@ -2,51 +2,41 @@ package com.lthdl.app.model;
 
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
-
-@Table(name = "User")
+import com.google.gson.annotations.SerializedName;
 public class User {
 
-    @Column(name = "email")
+    @SerializedName("email")
     public String email;
 
-    @Column(name = "social_id")
+    @SerializedName("social_id")
     public String social_id;
 
-    @Column(name = "social_token")
+    @SerializedName("social_token")
     public String social_token;
 
-    @Column(name = "name")
+    @SerializedName("name")
     public String name;
 
-    @Column(name = "soDu")
+    @SerializedName("soDu")
     public int soDu=0;
 
-    @Column(name = "thumbnail")
+    @SerializedName("thumbnail")
     public String thumbnail;
 
-    @Column(name = "tienThuong")
+    @SerializedName("tienThuong")
     public float tienThuong=0;
 
-    @Column(name = "birthday")
+    @SerializedName("birthday")
     public String birthday;
 
-    @Column(name = "role")
+    @SerializedName("role")
     public int role=5;
 
-    @Column(name = "location")
+    @SerializedName("location")
     public String location;
 
-    @Column(name = "gender")
+    @SerializedName("gender")
     public String gender;
-
-
-
-
-
-
-
-
-
 
 
     public String getGender() {
