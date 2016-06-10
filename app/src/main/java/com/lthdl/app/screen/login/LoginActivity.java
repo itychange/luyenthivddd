@@ -43,6 +43,7 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.Bind;
@@ -60,7 +61,7 @@ public class LoginActivity extends BaseActivity {
     SharedPreferences pre=null;
     @Bind(R.id.login_button)
     LoginButton login_button;
-    User user=null;
+
     protected void init() {
         SharedPreferences pre=this.getSharedPreferences ("login",MODE_PRIVATE);
         boolean bchk=pre.getBoolean("check", false);
@@ -69,6 +70,8 @@ public class LoginActivity extends BaseActivity {
             finish();
         }
         this.login_button = ((LoginButton) findViewById(R.id.login_button));
+        this.login_button.setReadPermissions(Arrays.asList(
+                "public_profile", "email", "user_birthday", "user_friends"));
         this.login_button.registerCallback(this.callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onCancel() {
@@ -97,14 +100,21 @@ public class LoginActivity extends BaseActivity {
                             public void onCompleted(JSONObject object, GraphResponse response) {
                                 final JSONObject jsonObject = response.getJSONObject();
                                 Log.e("Loca",jsonObject.toString());
+
                                 try {
-                                  user= new User();
+                                    User user= new User();
                                     img = new URL("http://graph.facebook.com/"+user.getSocial_id()+"/picture?type=normal");
                                     user.setSocial_id(jsonObject.getString("id"));
                                     user.setName(jsonObject.getString("name"));
                                     user.setSocial_token(Global.USER.social_token);
                                     user.setThumbnail(img.toString());
+                                    user.setEmail(jsonObject.getString("email"));
                                     user.setGender(jsonObject.getString("gender"));
+                                    user.setBirthday("11-1-1999");
+                                    user.setLocation("HaNoi");
+                                    user.setTienThuong(0);
+                                    user.setRole(0);
+                                    user.setSoDu(0);
 
                                     SharedPreferences pre=getSharedPreferences("login", MODE_PRIVATE);
                                     SharedPreferences.Editor edit=pre.edit();
@@ -122,7 +132,7 @@ public class LoginActivity extends BaseActivity {
                             }
                         });
                 Bundle parameters = new Bundle();
-                parameters.putString("fields", "id, name, email, gender, birthday ,location "); // Parámetros que pedimos a facebook
+                parameters.putString("fields", "id,name,email,gender,birthday,location"); // Parámetros que pedimos a facebook
                 request.setParameters(parameters);
                 request.executeAsync();
                 EventBus.getDefault().post(new OnEventOpenHomeActivity());

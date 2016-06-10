@@ -3,10 +3,8 @@ package com.lthdl.app.network;
 import com.lthdl.app.model.User;
 
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 /**
@@ -19,11 +17,8 @@ public interface  ApiInterface {
 //    Call<User> login(User user);
     @POST("users")
     Call<User> login(@Body User user);
-    public void insertUser(
-            @Field("username") String email,
-            @Field("social_id") String username,
-            @Field("roles") String password,
-            @Field("password") String name,
-            @Field("id") String id,
-            Callback<Response> callback);
+    @GET("menus")
+    Call<User> getMenungang();
+
+
 }
