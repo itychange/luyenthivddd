@@ -26,12 +26,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.lthdl.app.BaseFragment;
-import com.lthdl.app.common.GetJsonApiUtils;
 import com.lthdl.app.R;
+import com.lthdl.app.common.GetJsonApiUtils;
 import com.lthdl.app.common.widget.taskbar.SupportBar;
 import com.lthdl.app.common.widget.textview.CTextView;
 import com.lthdl.app.global.Constant;
+import com.lthdl.app.model.User;
+import com.lthdl.app.network.ApiClient;
+import com.lthdl.app.network.ApiInterface;
 import com.lthdl.app.screen.home.adapter.HomeAdapter;
 import com.lthdl.app.screen.home.fragment.HomeListFragment;
 import com.lthdl.app.screen.home.fragment.HomeListHasGroupFragment;
@@ -47,6 +51,10 @@ import java.lang.annotation.RetentionPolicy;
 
 import butterknife.Bind;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends BaseFragment {
     public static final String CLASS_NAME = " HomeFragment ";
@@ -377,9 +385,41 @@ public class HomeFragment extends BaseFragment {
     @Nullable
     public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle) {
         setRetainInstance(true);
-        return paramLayoutInflater.inflate(R.layout.home_activity, paramViewGroup, false);
+        View view=paramLayoutInflater.inflate(R.layout.home_activity, paramViewGroup, false);
+        CTextView tvName= (CTextView) view.findViewById(R.id.name);
+        CTextView tvEmail= (CTextView) view.findViewById(R.id.email);
+        CTextView tvSoDuNumber= (CTextView) view.findViewById(R.id.sodu);
+        CTextView tvTienThuongNumber= (CTextView) view.findViewById(R.id.tienthuong);
+        CircleImageView profile_image= (CircleImageView) view.findViewById(R.id.profile);
+        getInformation(tvName,tvEmail,tvSoDuNumber,tvTienThuongNumber,profile_image);
+        return view;
     }
 
+    public void getInformation(final CTextView tvName, final CTextView tvEmail, final CTextView tvSoDu, final CTextView tvTienThuong, final CircleImageView profile){
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        Call call= apiService.getMenungang("5642684278505472");
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                Log.i("null","---->"+response.body().getName());
+                tvName.setText(response.body().getName());
+                tvEmail.setText(response.body().getEmail());
+                tvSoDu.setText(""+response.body().getSoDu());
+                tvTienThuong.setText(""+response.body().getTienThuong());
+                Glide.with(HomeFragment.this)
+                        .load(response.body().getThumbnail())
+                        .centerCrop()
+                        .crossFade()
+                        .into(profile);
+
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+
+            }
+        });
+    }
     public void onResume() {
         super.onResume();
         changeTabsFont();

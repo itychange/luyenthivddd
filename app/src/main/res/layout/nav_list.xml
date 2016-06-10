@@ -1,41 +1,296 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <RelativeLayout android:gravity="center_vertical" android:id="@id/navHome" android:background="@drawable/xml_nav_selected" android:paddingTop="7.0dip" android:paddingBottom="7.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/home.nav.item.height">
-        <ImageView android:id="@id/imvHome" android:layout_width="@dimen/home.nav.icon.width" android:layout_height="@dimen/home.nav.icon.height" android:src="@drawable/icon_home" android:scaleType="centerInside" android:layout_centerVertical="true" android:layout_marginStart="8.0dip" />
-        <com.lthdl.app.common.widget.textview.CTextView android:textSize="@dimen/home.nav.item.textSize" android:id="@id/tvHome" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Home" android:layout_centerVertical="true" android:layout_marginStart="10.0dip" android:layout_toEndOf="@id/imvHome" style="@style/AppTheme.TextView.Menu" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@id/navHome"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/home.nav.item.height"
+        android:background="@drawable/xml_nav_selected"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="7.0dip"
+        android:paddingTop="7.0dip">
+
+        <ImageView
+            android:id="@id/imvHome"
+            android:layout_width="@dimen/home.nav.icon.width"
+            android:layout_height="@dimen/home.nav.icon.height"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8.0dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_home" />
+
+        <com.lthdl.app.common.widget.textview.CTextView
+            android:id="@id/tvHome"
+            style="@style/AppTheme.TextView.Menu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10.0dip"
+            android:layout_toEndOf="@id/imvHome"
+            android:text="Home"
+            android:textSize="@dimen/home.nav.item.textSize" />
     </RelativeLayout>
-    <RelativeLayout android:gravity="center_vertical" android:id="@id/navMyBook" android:background="@drawable/xml_nav_selected" android:paddingTop="7.0dip" android:paddingBottom="7.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/home.nav.item.height">
-        <ImageView android:id="@id/imvMyBook" android:layout_width="@dimen/home.nav.icon.width" android:layout_height="@dimen/home.nav.icon.height" android:src="@drawable/icon_mybook" android:scaleType="centerInside" android:layout_centerVertical="true" android:layout_marginStart="8.0dip" />
-        <com.lthdl.app.common.widget.textview.CTextView android:textSize="@dimen/home.nav.item.textSize" android:id="@id/tvMyBook" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="My Book" android:layout_centerVertical="true" android:layout_marginStart="10.0dip" android:layout_toEndOf="@id/imvMyBook" style="@style/AppTheme.TextView.Menu" />
+
+    <RelativeLayout
+        android:id="@id/navMyBook"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/home.nav.item.height"
+        android:background="@drawable/xml_nav_selected"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="7.0dip"
+        android:paddingTop="7.0dip">
+
+        <ImageView
+            android:id="@id/imvMyBook"
+            android:layout_width="@dimen/home.nav.icon.width"
+            android:layout_height="@dimen/home.nav.icon.height"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8.0dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_mybook" />
+
+        <com.lthdl.app.common.widget.textview.CTextView
+            android:id="@id/tvMyBook"
+            style="@style/AppTheme.TextView.Menu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10.0dip"
+            android:layout_toEndOf="@id/imvMyBook"
+            android:text="My Book"
+            android:textSize="@dimen/home.nav.item.textSize" />
     </RelativeLayout>
-    <RelativeLayout android:gravity="center_vertical" android:id="@id/navDanhMucKyThi" android:background="@drawable/xml_nav_selected" android:paddingTop="7.0dip" android:paddingBottom="7.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/home.nav.item.height">
-        <ImageView android:id="@id/imvDanhMucKyThi" android:layout_width="@dimen/home.nav.icon.width" android:layout_height="@dimen/home.nav.icon.height" android:src="@drawable/icon_danhmuckythi" android:scaleType="centerInside" android:layout_centerVertical="true" android:layout_marginStart="8.0dip" />
-        <com.lthdl.app.common.widget.textview.CTextView android:textSize="@dimen/home.nav.item.textSize" android:id="@id/tvDanhMucKyThi" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Danh mục kỳ thi" android:layout_centerVertical="true" android:layout_marginStart="10.0dip" android:layout_toEndOf="@id/imvDanhMucKyThi" style="@style/AppTheme.TextView.Menu" />
+
+    <RelativeLayout
+        android:id="@id/navDanhMucKyThi"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/home.nav.item.height"
+        android:background="@drawable/xml_nav_selected"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="7.0dip"
+        android:paddingTop="7.0dip">
+
+        <ImageView
+            android:id="@id/imvDanhMucKyThi"
+            android:layout_width="@dimen/home.nav.icon.width"
+            android:layout_height="@dimen/home.nav.icon.height"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8.0dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_danhmuckythi" />
+
+        <com.lthdl.app.common.widget.textview.CTextView
+            android:id="@id/tvDanhMucKyThi"
+            style="@style/AppTheme.TextView.Menu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10.0dip"
+            android:layout_toEndOf="@id/imvDanhMucKyThi"
+            android:text="Danh mục kỳ thi"
+            android:textSize="@dimen/home.nav.item.textSize" />
     </RelativeLayout>
-    <LinearLayout android:orientation="vertical" android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginStart="15.0dip" />
-    <RelativeLayout android:gravity="center_vertical" android:id="@id/navSoDu" android:background="@drawable/xml_nav_selected" android:paddingTop="7.0dip" android:paddingBottom="7.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/home.nav.item.height">
-        <ImageView android:id="@id/imvSoDu" android:layout_width="@dimen/home.nav.icon.width" android:layout_height="@dimen/home.nav.icon.height" android:src="@drawable/icon_sodu" android:scaleType="centerInside" android:layout_centerVertical="true" android:layout_marginStart="8.0dip" />
-        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toEndOf="@id/imvSoDu">
-            <com.lthdl.app.common.widget.textview.CTextView android:textSize="@dimen/home.nav.item.textSize" android:id="@id/tvSoDu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Số dư" android:layout_marginStart="10.0dip" style="@style/AppTheme.TextView.Menu" />
-            <com.lthdl.app.common.widget.textview.CTextView android:textSize="15.0sp" android:textColor="@color/colorAccent" android:id="@id/tvSoDuNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 đ" android:layout_marginStart="10.0dip" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginStart="15.0dip"
+        android:background="#ffe6e6e6"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:id="@id/navSoDu"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/home.nav.item.height"
+        android:background="@drawable/xml_nav_selected"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="7.0dip"
+        android:paddingTop="7.0dip">
+
+        <ImageView
+            android:id="@id/imvSoDu"
+            android:layout_width="@dimen/home.nav.icon.width"
+            android:layout_height="@dimen/home.nav.icon.height"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8.0dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_sodu" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/imvSoDu"
+            android:orientation="vertical">
+
+            <com.lthdl.app.common.widget.textview.CTextView
+                android:id="@+id/tvSoDu"
+                style="@style/AppTheme.TextView.Menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:text="Số dư"
+                android:textSize="@dimen/home.nav.item.textSize" />
+
+            <com.lthdl.app.common.widget.textview.CTextView
+                android:id="@+id/sodu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:text="0 đ"
+                android:textColor="@color/colorAccent"
+                android:textSize="15.0sp" />
         </LinearLayout>
-        <TextView android:textSize="14.0sp" android:id="@id/navNapThem" android:background="@drawable/xml_button_border_default" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nạp thêm" android:drawablePadding="8.0dip" android:layout_centerVertical="true" android:drawableStart="@drawable/icon_add" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" android:layout_marginStart="10.0dip" android:layout_marginEnd="16.0dip" android:layout_alignParentEnd="true" style="@style/AppTheme.TextView.Menu" />
+
+        <TextView
+            android:id="@id/navNapThem"
+            style="@style/AppTheme.TextView.Menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16.0dip"
+            android:layout_marginStart="10.0dip"
+            android:background="@drawable/xml_button_border_default"
+            android:clickable="true"
+            android:drawablePadding="8.0dip"
+            android:drawableStart="@drawable/icon_add"
+            android:paddingBottom="4.0dip"
+            android:paddingEnd="8.0dip"
+            android:paddingStart="8.0dip"
+            android:paddingTop="4.0dip"
+            android:text="Nạp thêm"
+            android:textSize="14.0sp" />
     </RelativeLayout>
-    <RelativeLayout android:gravity="center_vertical" android:id="@id/navTienThuong" android:background="@drawable/xml_nav_selected" android:paddingTop="7.0dip" android:paddingBottom="7.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/home.nav.item.height">
-        <ImageView android:id="@id/imvTienThuong" android:layout_width="@dimen/home.nav.icon.width" android:layout_height="@dimen/home.nav.icon.height" android:src="@drawable/icon_tienthuong" android:scaleType="centerInside" android:layout_centerVertical="true" android:layout_marginStart="8.0dip" />
-        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toEndOf="@id/imvTienThuong">
-            <com.lthdl.app.common.widget.textview.CTextView android:textSize="@dimen/home.nav.item.textSize" android:id="@id/tvTienThuong" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Tiền thưởng" android:layout_marginStart="10.0dip" style="@style/AppTheme.TextView.Menu" />
-            <com.lthdl.app.common.widget.textview.CTextView android:textSize="15.0sp" android:textColor="@color/colorAccent" android:id="@id/tvTienThuongNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20.999 đ" android:layout_marginStart="10.0dip" />
+
+    <RelativeLayout
+        android:id="@id/navTienThuong"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/home.nav.item.height"
+        android:background="@drawable/xml_nav_selected"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="7.0dip"
+        android:paddingTop="7.0dip">
+
+        <ImageView
+            android:id="@id/imvTienThuong"
+            android:layout_width="@dimen/home.nav.icon.width"
+            android:layout_height="@dimen/home.nav.icon.height"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8.0dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_tienthuong" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/imvTienThuong"
+            android:orientation="vertical">
+
+            <com.lthdl.app.common.widget.textview.CTextView
+                android:id="@id/tvTienThuong"
+                style="@style/AppTheme.TextView.Menu"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:text="Tiền thưởng"
+                android:textSize="@dimen/home.nav.item.textSize" />
+
+            <com.lthdl.app.common.widget.textview.CTextView
+                android:id="@+id/tienthuong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:text="20.999 đ"
+                android:textColor="@color/colorAccent"
+                android:textSize="15.0sp" />
         </LinearLayout>
     </RelativeLayout>
-    <RelativeLayout android:gravity="center_vertical" android:id="@id/navTaiKhoan" android:background="@drawable/xml_nav_selected" android:paddingTop="7.0dip" android:paddingBottom="7.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/home.nav.item.height">
-        <ImageView android:id="@id/imvTaiKhoan" android:layout_width="@dimen/home.nav.icon.width" android:layout_height="@dimen/home.nav.icon.height" android:src="@drawable/icon_taikhoan" android:scaleType="centerInside" android:layout_centerVertical="true" android:layout_marginStart="8.0dip" />
-        <com.lthdl.app.common.widget.textview.CTextView android:textSize="@dimen/home.nav.item.textSize" android:id="@id/tvTaiKhoan" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Tài khoản" android:layout_centerVertical="true" android:layout_marginStart="10.0dip" android:layout_toEndOf="@id/imvTaiKhoan" style="@style/AppTheme.TextView.Menu" />
+
+    <RelativeLayout
+        android:id="@id/navTaiKhoan"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/home.nav.item.height"
+        android:background="@drawable/xml_nav_selected"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="7.0dip"
+        android:paddingTop="7.0dip">
+
+        <ImageView
+            android:id="@id/imvTaiKhoan"
+            android:layout_width="@dimen/home.nav.icon.width"
+            android:layout_height="@dimen/home.nav.icon.height"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8.0dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_taikhoan" />
+
+        <com.lthdl.app.common.widget.textview.CTextView
+            android:id="@id/tvTaiKhoan"
+            style="@style/AppTheme.TextView.Menu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10.0dip"
+            android:layout_toEndOf="@id/imvTaiKhoan"
+            android:text="Tài khoản"
+            android:textSize="@dimen/home.nav.item.textSize" />
     </RelativeLayout>
-    <LinearLayout android:orientation="vertical" android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginStart="15.0dip" />
-    <RelativeLayout android:gravity="center_vertical" android:id="@id/navFanpage" android:background="@drawable/xml_nav_selected" android:paddingTop="7.0dip" android:paddingBottom="7.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/home.nav.item.height">
-        <ImageView android:id="@id/imvFanpage" android:layout_width="@dimen/home.nav.icon.width" android:layout_height="@dimen/home.nav.icon.height" android:src="@drawable/icon_fanpage" android:scaleType="centerInside" android:layout_centerVertical="true" android:layout_marginStart="8.0dip" />
-        <com.lthdl.app.common.widget.textview.CTextView android:textSize="@dimen/home.nav.item.textSize" android:id="@id/tvFanpage" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Fanpage" android:layout_centerVertical="true" android:layout_marginStart="10.0dip" android:layout_toEndOf="@id/imvFanpage" style="@style/AppTheme.TextView.Menu" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginStart="15.0dip"
+        android:background="#ffe6e6e6"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:id="@id/navFanpage"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/home.nav.item.height"
+        android:background="@drawable/xml_nav_selected"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="7.0dip"
+        android:paddingTop="7.0dip">
+
+        <ImageView
+            android:id="@id/imvFanpage"
+            android:layout_width="@dimen/home.nav.icon.width"
+            android:layout_height="@dimen/home.nav.icon.height"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8.0dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_fanpage" />
+
+        <com.lthdl.app.common.widget.textview.CTextView
+            android:id="@id/tvFanpage"
+            style="@style/AppTheme.TextView.Menu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10.0dip"
+            android:layout_toEndOf="@id/imvFanpage"
+            android:text="Fanpage"
+            android:textSize="@dimen/home.nav.item.textSize" />
     </RelativeLayout>
 </LinearLayout>

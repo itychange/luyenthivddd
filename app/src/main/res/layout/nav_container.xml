@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:background="@color/white" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:paddingTop="32.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/nav_header" />
-        <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/nav_list" />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:overScrollMode="never"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="32.0dip">
+
+        <include
+            layout="@layout/nav_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            layout="@layout/nav_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>

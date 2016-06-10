@@ -6,6 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * Created by Not Me on 6/8/2016.
@@ -17,8 +18,8 @@ public interface  ApiInterface {
 //    Call<User> login(User user);
     @POST("users")
     Call<User> login(@Body User user);
-    @GET("menus")
-    Call<User> getMenungang();
+    @GET("users/{id}")
+    Call<User> getMenungang(@Path("id") String id);
 
 
 }

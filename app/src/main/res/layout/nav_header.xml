@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:theme="@style/ThemeOverlay.AppCompat.Dark" android:gravity="bottom|center" android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="260.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <de.hdodenhof.circleimageview.CircleImageView android:id="@id/profile_image" android:layout_width="155.0dip" android:layout_height="155.0dip" android:src="@drawable/xml_avatar" app:civ_border_width="2.0dip" app:civ_border_color="@color/white" xmlns:app="http://schemas.android.com/apk/res-auto" />
-    <com.lthdl.app.common.widget.textview.CTextView android:textColor="@color/greyDark" android:gravity="center_horizontal" android:paddingTop="10.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Phan Thanh Dong" style="@style/AppTheme.TextView.Huge" />
-    <com.lthdl.app.common.widget.textview.CTextView android:textColor="#ff9a9a9a" android:id="@id/textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="24.0dip" android:text="DongPhan@gmail.com" style="@style/AppTheme.TextView" />
-    <LinearLayout android:background="@drawable/xml_separate" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="260.0dip"
+    android:background="@color/white"
+    android:gravity="bottom|center"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile"
+        android:layout_width="155.0dip"
+        android:layout_height="155.0dip"
+        android:src="@drawable/xml_avatar"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="2.0dip" />
+
+    <com.lthdl.app.common.widget.textview.CTextView
+        android:id="@+id/name"
+        style="@style/AppTheme.TextView.Huge"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="4.0dip"
+        android:paddingTop="10.0dip"
+        android:text="Phan Thanh Dong"
+        android:textColor="@color/greyDark" />
+
+    <com.lthdl.app.common.widget.textview.CTextView
+        android:id="@+id/email"
+        style="@style/AppTheme.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24.0dip"
+        android:text="DongPhan@gmail.com"
+        android:textColor="#ff9a9a9a" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:background="@drawable/xml_separate" />
 </LinearLayout>
