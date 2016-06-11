@@ -71,7 +71,7 @@ public class LoginActivity extends BaseActivity {
         }
         this.login_button = ((LoginButton) findViewById(R.id.login_button));
         this.login_button.setReadPermissions(Arrays.asList(
-                "public_profile", "email", "user_birthday", "user_friends"));
+                "public_profile", "email", "user_birthday", "user_friends","user_location"));
         this.login_button.registerCallback(this.callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onCancel() {
@@ -103,7 +103,7 @@ public class LoginActivity extends BaseActivity {
 
                                 try {
                                     User user= new User();
-                                    img = new URL("http://graph.facebook.com/"+user.getSocial_id()+"/picture?type=normal");
+                                    img = new URL("http://graph.facebook.com/"+jsonObject.getString("id")+"/picture?type=normal");
                                     user.setSocial_id(jsonObject.getString("id"));
                                     user.setName(jsonObject.getString("name"));
                                     user.setSocial_token(Global.USER.social_token);
