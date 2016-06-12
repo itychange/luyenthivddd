@@ -9,6 +9,8 @@ import com.lthdl.app.screen.home.view.BookCollectItemView;
 
 public class BookCollectAdapter extends Adapter<BookCollectViewHolder> {
     ItemBookTrangChu itemBookTrangChu =null;
+    String title;
+    int pos=0;
     public BookCollectAdapter(){
 
     }
@@ -20,9 +22,11 @@ public class BookCollectAdapter extends Adapter<BookCollectViewHolder> {
     }
 
     public void onBindViewHolder(BookCollectViewHolder paramBookCollectViewHolder, int paramInt) {
+        pos=paramInt;
+        pos++;
     }
 
     public BookCollectViewHolder onCreateViewHolder(ViewGroup paramViewGroup, int paramInt) {
-        return new BookCollectViewHolder(new BookCollectItemView(paramViewGroup.getContext()));
+        return new BookCollectViewHolder(new BookCollectItemView(paramViewGroup.getContext(),itemBookTrangChu.getName()));
     }
 }

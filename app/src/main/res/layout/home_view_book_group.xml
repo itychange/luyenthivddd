@@ -22,7 +22,7 @@
             android:src="@drawable/icon_danhmuc" />
 
         <com.lthdl.app.common.widget.textview.CTextView
-            android:id="@android:id/text1"
+            android:id="@+id/text1"
             style="@style/AppTheme.TextView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

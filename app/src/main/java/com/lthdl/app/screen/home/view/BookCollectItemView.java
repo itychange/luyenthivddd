@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 import com.lthdl.app.R;
@@ -33,8 +34,13 @@ public class BookCollectItemView extends FrameLayout {
     @Bind(R.id.lyExpand)
     LinearLayout lyExpand;
 
-    public BookCollectItemView(Context paramContext) {
+    @Bind(R.id.text1)
+    TextView text1;
+
+    String title;
+    public BookCollectItemView(Context paramContext,String title) {
         super(paramContext);
+        this.title=title;
         init();
     }
 
@@ -49,11 +55,15 @@ public class BookCollectItemView extends FrameLayout {
     }
 
     private void init() {
-        LayoutInflater.from(getContext()).inflate(R.layout.home_view_book_collect_item, this, true);
+        View view=LayoutInflater.from(getContext()).inflate(R.layout.home_view_book_collect_item, this, true);
+        text1= (TextView) view.findViewById(R.id.text1);
+        text1.setText(title);
         ButterKnife.bind(this);
+
         setData();
         this.lyBookGroupInVisiableBound.setExpanded(false);
         this.lyExpand.setVisibility(GONE);
+
     }
 
     @OnClick(R.id.lyExpand)
