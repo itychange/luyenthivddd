@@ -2,6 +2,7 @@ package com.lthdl.app.screen.home;
 
 import android.app.Activity;
 import android.app.SearchManager;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -26,7 +27,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.lthdl.app.BaseFragment;
 import com.lthdl.app.R;
 import com.lthdl.app.common.GetJsonApiUtils;
@@ -332,8 +332,9 @@ public class HomeFragment extends BaseFragment {
                 updateTabIfNeeded(false);
                 break;
             case R.id.navMyBook:
-                currentTab = MY_BOOK;
-                updateTabIfNeeded(false);
+                /*currentTab = MY_BOOK;
+                updateTabIfNeeded(false);*/
+                startActivity(new Intent(getActivity(),MyBooks.class));
                 break;
             case R.id.navNapThem:
                 EventBus.getDefault().post(new OnEventOpenNapTienActivity());
@@ -397,12 +398,12 @@ public class HomeFragment extends BaseFragment {
 
     public void getInformation(final CTextView tvName, final CTextView tvEmail, final CTextView tvSoDu, final CTextView tvTienThuong, final CircleImageView profile){
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call call= apiService.getMenungang("5642684278505472");
+        Call call= apiService.getMenungang("5663998322147328");
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                Log.i("null","---->"+response.body().getName());
-                tvName.setText(response.body().getName());
+         /*       Log.i("null","---->"+response.body().getName());
+            *//*    tvName.setText(response.body().getName());
                 tvEmail.setText(response.body().getEmail());
                 tvSoDu.setText(""+response.body().getSoDu());
                 tvTienThuong.setText(""+response.body().getTienThuong());
@@ -410,8 +411,8 @@ public class HomeFragment extends BaseFragment {
                         .load(response.body().getThumbnail())
                         .centerCrop()
                         .crossFade()
-                        .into(profile);
-
+                        .into(profile);*//*
+*/
             }
 
             @Override

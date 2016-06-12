@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.lthdl.app.screen.home.MyBooks"
+    android:theme="@style/AppTheme.NoActionBar">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolBarStyle.Event"
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        android:background="?colorPrimary"
+        android:minHeight="?actionBarSize"
+        app:layout_collapseMode="pin"
+        app:layout_scrollFlags="enterAlways|scroll"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <com.lthdl.app.common.widget.textview.CTextView
+            style="@style/AppTheme.TextView.Toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="MyBooks" />
+    </android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcvMyBook"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingTop="9.0dip"
+        android:visibility="visible"
+     />
+</LinearLayout>

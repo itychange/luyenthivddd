@@ -102,19 +102,22 @@ public class LoginActivity extends BaseActivity {
                                 Log.e("Loca",jsonObject.toString());
 
                                 try {
-                                    User user= new User();
                                     img = new URL("http://graph.facebook.com/"+jsonObject.getString("id")+"/picture?type=normal");
-                                    user.setSocial_id(jsonObject.getString("id"));
-                                    user.setName(jsonObject.getString("name"));
-                                    user.setSocial_token(Global.USER.social_token);
-                                    user.setThumbnail(img.toString());
-                                    user.setEmail(jsonObject.getString("email"));
-                                    user.setGender(jsonObject.getString("gender"));
-                                    user.setBirthday("11-1-1999");
-                                    user.setLocation("HaNoi");
-                                    user.setTienThuong(0);
-                                    user.setRole(0);
-                                    user.setSoDu(0);
+                                    User user= new User(jsonObject.getString("id"),""+Global.USER.social_token,
+                            jsonObject.getString("email"),jsonObject.getString("name"),"11-1-1999",""+jsonObject.getString("gender"),
+                                            "HaNoi","0","5","0",""+img);
+//                                    img = new URL("http://graph.facebook.com/"+jsonObject.getString("id")+"/picture?type=normal");
+//                                    user.setSocial_id(jsonObject.getString("id"));
+//                                    user.setName(jsonObject.getString("name"));
+//                                    user.setSocial_token(Global.USER.social_token);
+//                                    user.setThumbnail(img.toString());
+//                                    user.setEmail(jsonObject.getString("email"));
+//                                    user.setGender(jsonObject.getString("gender"));
+//                                    user.setBirthday("11-1-1999");
+//                                    user.setLocation("HaNoi");
+//                                    user.setTienThuong(0);
+//                                    user.setRole(0);
+//                                    user.setSoDu(0);
 
                                     SharedPreferences pre=getSharedPreferences("login", MODE_PRIVATE);
                                     SharedPreferences.Editor edit=pre.edit();

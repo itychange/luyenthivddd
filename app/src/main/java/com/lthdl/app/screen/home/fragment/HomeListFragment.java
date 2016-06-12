@@ -9,15 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lthdl.app.BaseFragment;
+import com.lthdl.app.R;
 import com.lthdl.app.screen.home.adapter.BookListAdapter;
 
 import butterknife.Bind;
 
-import com.lthdl.app.R;
-
 public class HomeListFragment extends BaseFragment {
     BookListAdapter adapter;
-
     @Bind(R.id.rcvBook)
     RecyclerView rcvBook;
 
