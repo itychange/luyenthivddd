@@ -5,11 +5,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 
 import com.lthdl.app.R;
-import com.lthdl.app.model.ItemBook;
 import com.lthdl.app.model.IMyBooks;
+import com.lthdl.app.model.ItemBook;
 import com.lthdl.app.network.ApiClient;
 import com.lthdl.app.network.ApiInterface;
 import com.lthdl.app.screen.home.adapter.BookListAdapter;
@@ -49,7 +48,7 @@ public class MyBooks extends Activity {
             @Override
             public void onResponse(Call<ItemBook> call, Response<ItemBook> response) {
                 ItemBook itemBook=response.body();
-                Log.i("null","=====>"+itemBook.getMyBookses().size());
+              /*  Log.i("null","=====>"+itemBook.getMyBookses().size());
                 for(int i=0;i<itemBook.getMyBookses().size();i++){
                     Log.i("null","=====>"+itemBook.getMyBookses().get(i).getName());
 
@@ -70,7 +69,7 @@ public class MyBooks extends Activity {
                     myBookses.add(modeMyBooks);
                 }
                 adapter = new BookListAdapter(myBookses);
-                rvMyBooks.setAdapter(adapter);
+                rvMyBooks.setAdapter(adapter);*/
 
             }
 

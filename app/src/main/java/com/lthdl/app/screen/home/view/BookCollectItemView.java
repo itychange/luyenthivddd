@@ -11,6 +11,10 @@ import android.widget.TextView;
 
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 import com.lthdl.app.R;
+import com.lthdl.app.model.Book_id;
+import com.lthdl.app.model.IMyBooks;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -38,9 +42,11 @@ public class BookCollectItemView extends FrameLayout {
     TextView text1;
 
     String title;
-    public BookCollectItemView(Context paramContext,String title) {
+    Book_id book_id;
+    public BookCollectItemView(Context paramContext,Book_id book_id,String title) {
         super(paramContext);
         this.title=title;
+        this.book_id=book_id;
         init();
     }
 
@@ -77,8 +83,12 @@ public class BookCollectItemView extends FrameLayout {
     }
 
     public void setData() {
-        for (int i = 0; i < 10; i++) {
-            BookItemView localBookItemView = new BookItemView(getContext());
+      //  ArrayList<IMyBooks> arrayList, String url, String title, String author, String rating, String cost
+        ArrayList<IMyBooks> arrayList=book_id.getMyBookses();
+        for (int i = 0; i < book_id.getMyBookses().size(); i++) {
+            BookItemView localBookItemView = new BookItemView(getContext(),arrayList,
+                    book_id.getMyBookses().get(i).getConver(),book_id.getMyBookses().get(i).getName()
+            ,book_id.getMyBookses().get(i).getAuthor(),book_id.getMyBookses().get(i).getRate(),book_id.getMyBookses().get(i).getRole());
             //if (i < MAX_BOOK_VISIBLE) {
                 this.lyBookGroupVisiable.addView(localBookItemView);
             /*} else {
