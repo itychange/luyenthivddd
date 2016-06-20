@@ -10,16 +10,18 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.lthdl.app.BaseActivity;
 import com.lthdl.app.BaseFragment;
 import com.lthdl.app.R;
 import com.lthdl.app.common.widget.textview.CTextView;
 import com.lthdl.app.global.Constant;
+import com.lthdl.app.model.User;
 import com.lthdl.app.screen.bookdetail.BookDetailFragment;
 import com.lthdl.app.screen.bookdetail.event.OnEventOpenBookDetailActivity;
 import com.lthdl.app.screen.home.HomeFragment;
+import com.lthdl.app.screen.home.event.OnEventInformation;
 import com.lthdl.app.screen.home.event.OnEventOpenHomeActivity;
 import com.lthdl.app.screen.login.LoginActivity;
 import com.lthdl.app.screen.login.event.OnEventOpenLoginActivity;
@@ -28,14 +30,17 @@ import com.lthdl.app.screen.naptien.event.OnEventOpenNapTienActivity;
 import com.lthdl.app.screen.questions.QuestionActivity;
 import com.lthdl.app.screen.questions.event.OnEventOpenQuestionActivity;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CoreActivity extends BaseActivity {
     public static final String CLASS_NAME = " CoreActivity ";
     BaseFragment currentFragment = null;
     BookDetailFragment fragmentBookDetail;
     HomeFragment fragmentHome;
-
+    User user;
     protected void init() {
 //        if (Global.isLoggedIn()) {
             this.fragmentHome = new HomeFragment();
@@ -116,6 +121,10 @@ public class CoreActivity extends BaseActivity {
         intent.putExtra("question_type", 2);
         startActivity(intent);
     }
+    @Subscribe
+    public void onEvent(OnEventInformation information) {
+        user=information.user;
+    }
     public void openBottomSheet () {
 
         View view = getLayoutInflater ().inflate (R.layout.bottom_sheet, null);
@@ -133,18 +142,15 @@ public class CoreActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(CoreActivity.this,"btn_desau",Toast.LENGTH_SHORT).show();
                 mBottomSheetDialog.dismiss();
             }
         });
-
         btn_muangay.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(CoreActivity.this,"btn_muangay",Toast.LENGTH_SHORT).show();
-                mBottomSheetDialog.dismiss();
                 openMuaHetTien();
+                mBottomSheetDialog.dismiss();
             }
         });
 
@@ -153,6 +159,16 @@ public class CoreActivity extends BaseActivity {
         View view = getLayoutInflater ().inflate (R.layout.view_item_mua_het_cmn_tien, null);
         CTextView btn_huy = (CTextView)view.findViewById( R.id.huy);
         TextView navNapThem= (TextView) view.findViewById(R.id.navNapThem);
+        CTextView name= (CTextView) view.findViewById(R.id.name);
+        CTextView tvMoney= (CTextView) view.findViewById(R.id.tvMoney);
+        CircleImageView profile= (CircleImageView) view.findViewById(R.id.profile);
+        Glide.with(CoreActivity.this)
+                .load(user.getThumbnail())
+                .centerCrop()
+                .crossFade()
+                .into(profile);
+        tvMoney.setText(user.getSoDu());
+        name.setText(user.getName()+"đ");
         final Dialog mMuahettien = new Dialog (this, R.style.MaterialDialogSheet);
         mMuahettien.setContentView (view);
         mMuahettien.setCancelable (true);
@@ -160,11 +176,17 @@ public class CoreActivity extends BaseActivity {
         mMuahettien.getWindow ().setGravity (Gravity.BOTTOM);
         mMuahettien.show ();
         btn_huy.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                Toast.makeText(CoreActivity.this,"Huy",Toast.LENGTH_SHORT).show();
                 mMuahettien.dismiss();
+            }
+        });
+        navNapThem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMuahettien.dismiss();
+                EventBus.getDefault().post(new OnEventOpenNapTienActivity());
+
             }
         });
 

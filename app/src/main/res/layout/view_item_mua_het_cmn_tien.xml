@@ -17,7 +17,8 @@
             android:orientation="vertical"
             android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile"
                 android:layout_width="match_parent"
                 android:layout_height="155.0dip"
@@ -51,6 +52,7 @@
                 android:text="Số dư hiện tại"
                 android:textColor="@color/greyDark" />
             <com.lthdl.app.common.widget.textview.CTextView
+                android:id="@+id/tvMoney"
                 style="@style/AppTheme.TextView.Huge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

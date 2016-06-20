@@ -156,24 +156,24 @@
         </LinearLayout>
 
         <TextView
-            android:id="@id/navNapThem"
-            style="@style/AppTheme.TextView.Menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="16.0dip"
-            android:layout_marginStart="10.0dip"
-            android:background="@drawable/xml_button_border_default"
-            android:clickable="true"
-            android:drawablePadding="8.0dip"
-            android:drawableStart="@drawable/icon_add"
-            android:paddingBottom="4.0dip"
-            android:paddingEnd="8.0dip"
-            android:paddingStart="8.0dip"
-            android:paddingTop="4.0dip"
-            android:text="Nạp thêm"
-            android:textSize="14.0sp" />
+        android:id="@id/navNapThem"
+        style="@style/AppTheme.TextView.Menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16.0dip"
+        android:layout_marginStart="10.0dip"
+        android:background="@drawable/xml_button_border_default"
+        android:clickable="true"
+        android:drawablePadding="8.0dip"
+        android:drawableStart="@drawable/icon_add"
+        android:paddingBottom="4.0dip"
+        android:paddingEnd="8.0dip"
+        android:paddingStart="8.0dip"
+        android:paddingTop="4.0dip"
+        android:text="Nạp thêm"
+        android:textSize="14.0sp" />
     </RelativeLayout>
 
     <RelativeLayout

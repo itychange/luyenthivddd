@@ -38,6 +38,7 @@ import com.lthdl.app.model.User;
 import com.lthdl.app.network.ApiClient;
 import com.lthdl.app.network.ApiInterface;
 import com.lthdl.app.screen.home.adapter.HomeAdapter;
+import com.lthdl.app.screen.home.event.OnEventInformation;
 import com.lthdl.app.screen.home.fragment.HomeListFragment;
 import com.lthdl.app.screen.home.fragment.HomeListHasGroupFragment;
 import com.lthdl.app.screen.home.fragment.MyBoook;
@@ -418,12 +419,20 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 Log.i("null","---->"+response.body().getName());
-                tvName.setText(response.body().getName());
-                tvEmail.setText(response.body().getEmail());
-                tvSoDu.setText(""+response.body().getSoDu());
-                tvTienThuong.setText(""+response.body().getTienThuong());
+                User user=new User();
+                user.setName(response.body().getName());
+                user.setEmail(response.body().getEmail());
+                user.setSoDu(response.body().getSoDu());
+                user.setTienThuong(response.body().getTienThuong());
+                user.setThumbnail(response.body().getThumbnail());
+                EventBus.getDefault().post(new OnEventInformation(user));
+
+                tvName.setText(user.getName());
+                tvEmail.setText(user.getEmail());
+                tvSoDu.setText(user.getSoDu());
+                tvTienThuong.setText(user.getTienThuong());
                 Glide.with(HomeFragment.this)
-                        .load(response.body().getThumbnail())
+                        .load(user.getThumbnail())
                         .centerCrop()
                         .crossFade()
                         .into(profile);
