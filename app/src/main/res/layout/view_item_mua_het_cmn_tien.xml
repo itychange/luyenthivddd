@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="200.0dip"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|left"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile"
+                android:layout_width="match_parent"
+                android:layout_height="155.0dip"
+                android:src="@drawable/xml_avatar"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2.0dip" />
+
+            <com.lthdl.app.common.widget.textview.CTextView
+                android:id="@+id/name"
+                style="@style/AppTheme.TextView.Huge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="4.0dip"
+                android:paddingTop="10.0dip"
+                android:text="Phan Thanh Dong"
+                android:textColor="@color/greyDark" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <com.lthdl.app.common.widget.textview.CTextView
+                style="@style/AppTheme.TextView.Huge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="4.0dip"
+                android:paddingTop="10.0dip"
+                android:text="Số dư hiện tại"
+                android:textColor="@color/greyDark" />
+            <com.lthdl.app.common.widget.textview.CTextView
+                style="@style/AppTheme.TextView.Huge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="4.0dip"
+                android:paddingTop="10.0dip"
+                android:text="10.000 đ"
+                android:textColor="@color/red"
+                android:textSize="50dp"/>
+            <TextView
+                android:id="@+id/navNapThem"
+                style="@style/AppTheme.TextView.Menu"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16.0dip"
+                android:layout_marginStart="10.0dip"
+                android:background="@drawable/xml_button_border_default"
+                android:clickable="true"
+                android:drawablePadding="8.0dip"
+                android:drawableStart="@drawable/icon_add"
+                android:paddingBottom="4.0dip"
+                android:paddingEnd="8.0dip"
+                android:paddingStart="8.0dip"
+                android:paddingTop="4.0dip"
+                android:text="Nạp thêm"
+                android:textSize="14.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.lthdl.app.common.widget.textview.CTextView
+        style="@style/AppTheme.TextView.Huge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="4.0dip"
+        android:paddingTop="10.0dip"
+        android:paddingEnd="8.0dip"
+        android:paddingStart="8.0dip"
+        android:text="Số dư hiện tại của bạn không đủ để thanh toán.Xin vui lòng nạp thêm tiền vào tài khoản ứng dụng."
+        android:textColor="@color/red"
+        android:textSize="20dp"/>
+    <com.lthdl.app.common.widget.textview.CTextView
+        android:id="@+id/huy"
+        style="@style/AppTheme.TextView.Huge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/ripple_material_light"
+        android:gravity="center_horizontal"
+        android:paddingBottom="4.0dip"
+        android:paddingTop="10.0dip"
+        android:paddingEnd="8.0dip"
+        android:paddingStart="8.0dip"
+        android:text="Hủy"
+        android:textColor="@color/blackDetail"
+        android:textSize="20dp"/>
+</LinearLayout>

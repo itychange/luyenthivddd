@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent"
+    android:layout_height="200.0dip"
+    android:orientation="vertical"
+    android:background="@drawable/xml_item_selected"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<FrameLayout
+    android:id="@id/lyMain"
+    android:layout_width="fill_parent"
+    android:layout_height="110.0dip"
+    android:clickable="true"
+    android:paddingEnd="8.0dip"
+    android:paddingStart="8.0dip">
+
+    <TextView
+        android:id="@+id/tvBookId"
+        android:layout_width="0.0dip"
+        android:layout_height="0.0dip"
+        android:text="asdkfjafj1324234" />
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="false"
+        android:duplicateParentState="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:foreground="?selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/imvThumb"
+            android:layout_width="80.0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="6.0dip"
+            android:duplicateParentState="true"
+            android:paddingBottom="4.0dip"
+            android:paddingTop="4.0dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/image_book1" />
+
+        <com.lthdl.app.common.widget.textview.CTextView
+            android:id="@+id/tvTitleBook"
+            style="@style/AppTheme.TextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left|top"
+            android:layout_marginTop="4.0dip"
+            android:layout_toRightOf="@id/imvThumb"
+            android:duplicateParentState="true"
+            android:text="Giải Tích 12"
+            android:textColor="@color/colorAccent"
+            android:textSize="18.0sp" />
+
+        <com.lthdl.app.common.widget.textview.CTextView
+            android:id="@+id/tvAuthor"
+            style="@style/AppTheme.TextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitleBook"
+            android:layout_gravity="left"
+            android:layout_marginTop="4.0dip"
+            android:layout_toRightOf="@id/imvThumb"
+            android:duplicateParentState="true"
+            android:text="Trần Phương"
+            android:textSize="16.0sp" />
+
+        <RatingBar
+            android:id="@+id/rbRating"
+            style="@style/AppTheme.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="13.0dip"
+            android:layout_below="@id/tvAuthor"
+            android:layout_gravity="center|left|top"
+            android:layout_marginTop="4.0dip"
+            android:layout_toRightOf="@id/imvThumb"
+            android:duplicateParentState="true"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="3.5" />
+
+        <com.lthdl.app.common.widget.textview.CTextView
+            style="@style/AppTheme.TextView"
+            android:id="@+id/numrating"
+            android:layout_width="wrap_content"
+            android:layout_height="16.0dip"
+            android:layout_alignBaseline="@id/rbRating"
+            android:layout_below="@id/tvAuthor"
+            android:layout_marginBottom="4.0dip"
+            android:layout_marginLeft="8.0dip"
+            android:layout_marginTop="4.0dip"
+            android:layout_toRightOf="@id/rbRating"
+            android:duplicateParentState="true"
+            android:text="( 36 )" />
+
+        <com.lthdl.app.common.widget.textview.CTextView
+            android:id="@+id/tvCost"
+            style="@style/AppTheme.TextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rbRating"
+            android:layout_gravity="left"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginTop="8.0dip"
+            android:layout_toRightOf="@id/imvThumb"
+            android:duplicateParentState="true"
+            android:text="39.000 đ"
+            android:textSize="17.0sp" />
+
+        <com.lthdl.app.common.widget.button.CButton
+            android:id="@+id/btnDaMua"
+            style="@style/AppTheme.TextView.Menu.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="30.0dip"
+            android:layout_below="@id/rbRating"
+            android:layout_gravity="left"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginRight="16.0dip"
+            android:layout_marginTop="8.0dip"
+            android:layout_toRightOf="@id/imvThumb"
+            android:background="@drawable/xml_button_border"
+            android:duplicateParentState="true"
+            android:gravity="center"
+            android:text="Đã mua"
+            android:textColor="@color/greyDark"
+            android:textSize="18.0sp"
+            android:visibility="gone" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/home.content.background" />
+    </RelativeLayout>
+</FrameLayout>
+
+    <com.lthdl.app.common.widget.textview.CTextView
+        style="@style/AppTheme.TextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rbRating"
+        android:layout_gravity="left"
+        android:layout_marginBottom="8.0dip"
+        android:layout_marginTop="8.0dip"
+        android:layout_toRightOf="@id/imvThumb"
+        android:duplicateParentState="true"
+        android:text="Bao gồm các nội dung hiện tại và nội dung cập nhật sau đó của môn học"
+        android:textSize="17.0sp"
+        android:paddingEnd="8.0dip"
+        android:paddingStart="8.0dip"/>
+    <View
+        android:background="@color/blackDetail"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dip"/>
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:paddingEnd="8.0dip"
+        android:paddingStart="8.0dip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.lthdl.app.common.widget.textview.CTextView
+            style="@style/AppTheme.TextView"
+            android:id="@+id/btn_desau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginTop="8.0dip"
+            android:duplicateParentState="true"
+            android:text="Để Sau"
+            android:textStyle="bold"
+            android:textSize="17.0sp"/>
+        <com.lthdl.app.common.widget.textview.CTextView
+            style="@style/AppTheme.TextView"
+            android:id="@+id/btn_muangay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginTop="8.0dip"
+            android:duplicateParentState="true"
+            android:text="Mua Ngay"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:textSize="17.0sp"/>
+    </RelativeLayout>
+
+</LinearLayout>

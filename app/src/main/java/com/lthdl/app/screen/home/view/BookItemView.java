@@ -114,6 +114,6 @@ public class BookItemView extends LinearLayout {
     @OnClick(R.id.lyMain)
     public void onBookClick(View paramView) {
         Log.i("user_buy",""+user_buy);
-        EventBus.getDefault().post(new OnEventOpenBookDetailActivity(getBookId()));
+        EventBus.getDefault().post(new OnEventOpenBookDetailActivity(getBookId(),user_buy));
     }
 }

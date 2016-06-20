@@ -1,14 +1,21 @@
 package com.lthdl.app.screen.core;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lthdl.app.BaseActivity;
 import com.lthdl.app.BaseFragment;
 import com.lthdl.app.R;
+import com.lthdl.app.common.widget.textview.CTextView;
 import com.lthdl.app.global.Constant;
 import com.lthdl.app.screen.bookdetail.BookDetailFragment;
 import com.lthdl.app.screen.bookdetail.event.OnEventOpenBookDetailActivity;
@@ -72,12 +79,16 @@ public class CoreActivity extends BaseActivity {
 
     @Subscribe
     public void onEvent(OnEventOpenBookDetailActivity paramOnEventOpenBookDetailActivity) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.hide(this.fragmentHome);
-        transaction.show(this.fragmentBookDetail);
-        this.currentFragment = this.fragmentBookDetail;
-        transaction.addToBackStack(BookDetailFragment.class.getName());
-        transaction.commitAllowingStateLoss();
+        if(paramOnEventOpenBookDetailActivity.user_buy.equals("0")){
+            openBottomSheet();
+        }else {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.hide(this.fragmentHome);
+            transaction.show(this.fragmentBookDetail);
+            this.currentFragment = this.fragmentBookDetail;
+            transaction.addToBackStack(BookDetailFragment.class.getName());
+            transaction.commitAllowingStateLoss();
+        }
     }
 
     @Subscribe
@@ -104,5 +115,58 @@ public class CoreActivity extends BaseActivity {
         Intent intent = new Intent(this, QuestionActivity.class);
         intent.putExtra("question_type", 2);
         startActivity(intent);
+    }
+    public void openBottomSheet () {
+
+        View view = getLayoutInflater ().inflate (R.layout.bottom_sheet, null);
+        CTextView btn_desau = (CTextView)view.findViewById( R.id.btn_desau);
+        CTextView btn_muangay = (CTextView)view.findViewById( R.id.btn_muangay);
+
+        final Dialog mBottomSheetDialog = new Dialog (this, R.style.MaterialDialogSheet);
+        mBottomSheetDialog.setContentView (view);
+        mBottomSheetDialog.setCancelable (true);
+        mBottomSheetDialog.getWindow ().setLayout (LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        mBottomSheetDialog.getWindow ().setGravity (Gravity.BOTTOM);
+        mBottomSheetDialog.show ();
+
+        btn_desau.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(CoreActivity.this,"btn_desau",Toast.LENGTH_SHORT).show();
+                mBottomSheetDialog.dismiss();
+            }
+        });
+
+        btn_muangay.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(CoreActivity.this,"btn_muangay",Toast.LENGTH_SHORT).show();
+                mBottomSheetDialog.dismiss();
+                openMuaHetTien();
+            }
+        });
+
+    }
+    public void openMuaHetTien () {
+        View view = getLayoutInflater ().inflate (R.layout.view_item_mua_het_cmn_tien, null);
+        CTextView btn_huy = (CTextView)view.findViewById( R.id.huy);
+        TextView navNapThem= (TextView) view.findViewById(R.id.navNapThem);
+        final Dialog mMuahettien = new Dialog (this, R.style.MaterialDialogSheet);
+        mMuahettien.setContentView (view);
+        mMuahettien.setCancelable (true);
+        mMuahettien.getWindow ().setLayout (LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        mMuahettien.getWindow ().setGravity (Gravity.BOTTOM);
+        mMuahettien.show ();
+        btn_huy.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(CoreActivity.this,"Huy",Toast.LENGTH_SHORT).show();
+                mMuahettien.dismiss();
+            }
+        });
+
     }
 }
