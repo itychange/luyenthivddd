@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/greyWhite">
-
+    android:background="@color/white"
+    android:orientation="vertical">
     <LinearLayout
         android:id="@id/layoutTop"
         style="@style/ToolBarStyle.Event"
@@ -17,7 +17,7 @@
         app:layout_scrollFlags="enterAlways|scroll">
 
         <ImageView
-            android:id="@id/btnBack"
+            android:id="@+id/btnBack"
             android:layout_width="40.0dip"
             android:layout_height="40.0dip"
             android:padding="4.0dip"
@@ -31,24 +31,16 @@
             android:gravity="center"
             android:text="@string/actionbar_title" />
 
-        <ImageView
-            android:id="@id/btnSupport"
-            android:layout_width="50.0dip"
-            android:layout_height="50.0dip"
-            android:padding="14.0dip"
-            android:src="@drawable/icon_smallsupport" />
+
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@id/content"
+    <android.support.v7.widget.RecyclerView
+        android:id="@id/rcvBook"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@id/layoutTop" />
-
-    <com.lthdl.app.common.widget.taskbar.SupportBar
-        android:id="@id/supportBar"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:visibility="gone" />
-</RelativeLayout>
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingTop="9.0dip"
+        android:visibility="visible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</LinearLayout>

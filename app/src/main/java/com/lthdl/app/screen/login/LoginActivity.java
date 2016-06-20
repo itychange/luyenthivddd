@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -141,12 +140,13 @@ public class LoginActivity extends BaseActivity {
                 EventBus.getDefault().post(new OnEventOpenHomeActivity());
             }
         });
-        this.btnLoginFb.setOnClickListener(new OnClickListener() {
+        this.btnLoginFb.setOnClickListener(new View.OnClickListener() {
             public void onClick(View paramView) {
                 LoginActivity.this.login_button.performClick();
             }
         });
-
+        EventBus.getDefault().post(new OnEventOpenHomeActivity());
+        finish();
     }
 
 

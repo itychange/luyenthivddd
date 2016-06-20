@@ -16,6 +16,7 @@ public class BookListAdapter extends RecyclerView.Adapter<BookHolder> {
     String author;
     String rating;
     String cost;
+    String user_buy;
     int postion=0;
     public BookListAdapter(ArrayList<IMyBooks> arrayList){
         this.arrayList=arrayList;
@@ -46,7 +47,8 @@ public class BookListAdapter extends RecyclerView.Adapter<BookHolder> {
             author=modeMyBooks.getAuthor();
             rating=modeMyBooks.getRate();
             cost=modeMyBooks.getPrice();
+            user_buy=modeMyBooks.getUser_buy();
         }
-        return arrayList!=null?new BookHolder(new BookItemView(paramViewGroup.getContext(),arrayList,url,title,author,rating,cost)):new BookHolder(new BookItemView(paramViewGroup.getContext()));
+        return arrayList!=null?new BookHolder(new BookItemView(paramViewGroup.getContext(),arrayList,url,title,author,rating,cost,user_buy)):new BookHolder(new BookItemView(paramViewGroup.getContext()));
     }
 }

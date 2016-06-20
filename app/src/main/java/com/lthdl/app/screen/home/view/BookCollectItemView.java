@@ -88,7 +88,7 @@ public class BookCollectItemView extends FrameLayout {
         for (int i = 0; i < book_id.getMyBookses().size(); i++) {
             BookItemView localBookItemView = new BookItemView(getContext(),arrayList,
                     book_id.getMyBookses().get(i).getConver(),book_id.getMyBookses().get(i).getName()
-            ,book_id.getMyBookses().get(i).getAuthor(),book_id.getMyBookses().get(i).getRate(),book_id.getMyBookses().get(i).getRole());
+            ,book_id.getMyBookses().get(i).getAuthor(),book_id.getMyBookses().get(i).getRate(),book_id.getMyBookses().get(i).getRole(),book_id.getMyBookses().get(i).getUser_buy());
             //if (i < MAX_BOOK_VISIBLE) {
                 this.lyBookGroupVisiable.addView(localBookItemView);
             /*} else {

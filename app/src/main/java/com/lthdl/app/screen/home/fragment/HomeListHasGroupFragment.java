@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,11 +45,6 @@ public class HomeListHasGroupFragment extends BaseFragment {
         call.enqueue(new Callback<BooksTrangChu>() {
             @Override
             public void onResponse(Call<BooksTrangChu> call, Response<BooksTrangChu> response) {
-                Log.i("=====>","Datacenter:"+response.body().getItemBooks().getMyBookses().size());
-                for(int i=0;i<response.body().getItemBooks().getMyBookses().size();i++){
-                    Log.i("=====>","Datacenter:"+response.body().getItemBooks().getMyBookses().get(i).getName());
-
-                }
                 itemBookTrangChu =response.body().getItemBooks();
                 if(itemBookTrangChu !=null){
                     adapter = new BookCollectAdapter(itemBookTrangChu);

@@ -51,12 +51,13 @@ public class BookItemView extends LinearLayout {
     String author;
     String rating;
     String cost;
+    String user_buy;
     public ArrayList<IMyBooks> arrayList=null;
     public BookItemView(Context paramContext) {
         super(paramContext);
         init();
     }
-    public BookItemView(Context paramContext, ArrayList<IMyBooks>arrayList, String url, String title, String author, String rating, String cost) {
+    public BookItemView(Context paramContext, ArrayList<IMyBooks>arrayList, String url, String title, String author, String rating, String cost,String user_buy) {
         super(paramContext);
         this.arrayList=arrayList;
         this.url=url;
@@ -64,6 +65,7 @@ public class BookItemView extends LinearLayout {
         this.author=author;
         this.rating=rating;
         this.cost=cost;
+        this.user_buy=user_buy;
         init();
     }
     public BookItemView(Context paramContext, AttributeSet paramAttributeSet) {
@@ -84,7 +86,6 @@ public class BookItemView extends LinearLayout {
         tvCost= (CTextView) view.findViewById(R.id.tvCost);
         rbRating= (RatingBar) view.findViewById(R.id.rbRating);
         numrating= (CTextView) view.findViewById(R.id.numrating);
-        Log.i("null","===>"+rating);
 
         if(arrayList!=null){
             Glide.with(getContext())
@@ -112,6 +113,7 @@ public class BookItemView extends LinearLayout {
 
     @OnClick(R.id.lyMain)
     public void onBookClick(View paramView) {
+        Log.i("user_buy",""+user_buy);
         EventBus.getDefault().post(new OnEventOpenBookDetailActivity(getBookId()));
     }
 }

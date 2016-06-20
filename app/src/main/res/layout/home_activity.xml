@@ -19,7 +19,7 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <android.support.design.widget.AppBarLayout
-            android:id="@id/appBar"
+            android:id="@+id/appBar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/home.tab.background"
@@ -27,7 +27,7 @@
             android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.design.widget.CollapsingToolbarLayout
-                android:id="@id/collapseToolbar"
+                android:id="@+id/collapseToolbar"
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/home.toolbar.CollapsingToolbarLayout.height"
                 android:fitsSystemWindows="false"
@@ -92,12 +92,16 @@
         android:layout_height="fill_parent">
 
         <com.lthdl.app.common.widget.taskbar.SupportBar
-            android:id="@id/supportBar"
+            android:id="@+id/supportBar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:visibility="gone" />
     </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <android.support.design.widget.NavigationView
         android:id="@id/nav_view"

@@ -2,13 +2,13 @@ package com.lthdl.app.screen.home;
 
 import android.app.Activity;
 import android.app.SearchManager;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -40,6 +40,7 @@ import com.lthdl.app.network.ApiInterface;
 import com.lthdl.app.screen.home.adapter.HomeAdapter;
 import com.lthdl.app.screen.home.fragment.HomeListFragment;
 import com.lthdl.app.screen.home.fragment.HomeListHasGroupFragment;
+import com.lthdl.app.screen.home.fragment.MyBoook;
 import com.lthdl.app.screen.naptien.event.OnEventOpenNapTienActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -51,6 +52,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
@@ -137,6 +139,9 @@ public class HomeFragment extends BaseFragment {
 
     @Bind(R.id.tvTienThuong)
     CTextView tvTienThuong;
+
+    @Bind(R.id.appBar)
+    AppBarLayout appBar;
 
     private void changeTabsFont() {
         ViewGroup localViewGroup1 = (ViewGroup) tabLayout.getChildAt(0);
@@ -335,7 +340,13 @@ public class HomeFragment extends BaseFragment {
             case R.id.navMyBook:
                 /*currentTab = MY_BOOK;
                 updateTabIfNeeded(false);*/
-                startActivity(new Intent(getActivity(),MyBooks.class));
+                MyBoook nextFrag= new MyBoook();
+                this.getFragmentManager().beginTransaction()
+                        .replace(R.id.content, nextFrag,"null")
+                        .addToBackStack(null)
+                        .commit();
+                updateTabIfNeeded(false);
+
                 break;
             case R.id.navNapThem:
                 EventBus.getDefault().post(new OnEventOpenNapTienActivity());
@@ -383,17 +394,20 @@ public class HomeFragment extends BaseFragment {
             });
         }
     }
-
     @Nullable
     public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle) {
         setRetainInstance(true);
         View view=paramLayoutInflater.inflate(R.layout.home_activity, paramViewGroup, false);
+        ButterKnife.bind(getActivity());
         CTextView tvName= (CTextView) view.findViewById(R.id.name);
+        collapseToolbar= (CollapsingToolbarLayout) view.findViewById(R.id.collapseToolbar);
+        appBar= (AppBarLayout) view.findViewById(R.id.appBar);
         CTextView tvEmail= (CTextView) view.findViewById(R.id.email);
         CTextView tvSoDuNumber= (CTextView) view.findViewById(R.id.sodu);
         CTextView tvTienThuongNumber= (CTextView) view.findViewById(R.id.tienthuong);
         CircleImageView profile_image= (CircleImageView) view.findViewById(R.id.profile);
         getInformation(tvName,tvEmail,tvSoDuNumber,tvTienThuongNumber,profile_image);
+        initCollapsingToolbar();
         return view;
     }
 
@@ -419,6 +433,30 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onFailure(Call<User> call, Throwable t) {
 
+            }
+        });
+    }
+    private void initCollapsingToolbar() {
+        collapseToolbar.setTitle(" ");
+        appBar.setExpanded(true);
+
+        // hiding & showing the title when toolbar expanded & collapsed
+        appBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = false;
+            int scrollRange = -1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapseToolbar.setTitle(getString(R.string.app_name));
+                    isShow = true;
+                } else if (isShow) {
+                    collapseToolbar.setTitle(" ");
+                    isShow = false;
+                }
             }
         });
     }

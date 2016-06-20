@@ -1,6 +1,10 @@
 package com.lthdl.app.model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by THANHHUNGPHAT on 11/06/2016.
@@ -16,7 +20,17 @@ public class ItemBook {
     String id;
     @SerializedName("book_ids")
     Book_id book_ids;
+    @SerializedName("items")
+    @Expose
+    private List<IMyBooks> myBookses = new ArrayList<IMyBooks>();
 
+    public List<IMyBooks> getMyBookses() {
+        return myBookses;
+    }
+
+    public void setMyBookses(List<IMyBooks> myBookses) {
+        this.myBookses = myBookses;
+    }
     public Book_id getBook_ids() {
         return book_ids;
     }
